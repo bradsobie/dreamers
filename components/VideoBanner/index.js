@@ -27,7 +27,7 @@ const ChildrenContainer = styled.div`
 
 export default (props) => (
   <Container>
-    <Video autoPlay loop muted preload>
+    <Video autoPlay loop muted preload="true">
       <source src="https://elevationchurch.org/wp-content/uploads/2018/12/121618_TheExchangeZone_EC.org_.mp4" type="video/mp4" />
     </Video>
     <ChildrenContainer>
