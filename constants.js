@@ -1,0 +1,1 @@
+export const PRISMIC_API = 'https://dreamers.cdn.prismic.io/api/v2';
