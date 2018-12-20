@@ -1,4 +1,3 @@
-import { Fragment } from 'React';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import GlobalStyles from '../globalStyles';
@@ -11,10 +10,10 @@ export default class MyDocument extends Document {
     ctx.renderPage = () =>
       originalRenderPage({
         enhanceApp: App => props => sheet.collectStyles(
-          <Fragment>
+          <div>
             <GlobalStyles />
             <App {...props} />
-          </Fragment>
+          </div>
         )
       })
 

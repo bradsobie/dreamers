@@ -22,6 +22,7 @@ export default class extends React.Component {
         <Head>
           <title>Dreamer's Church</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="robots" content="noindex" />
         </Head>
         <VideoBanner>
           <Logo />
