@@ -1,4 +1,3 @@
-import React from 'react';
 import App, { Container } from 'next/app';
 import GlobalStyles from '../globalStyles';
 import { getCommonData } from '../services/prismic';
