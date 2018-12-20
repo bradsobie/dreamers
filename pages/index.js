@@ -23,6 +23,7 @@ export default class extends React.Component {
           <title>Dreamer's Church</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="robots" content="noindex" />
+          <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
         </Head>
         <VideoBanner>
           <Logo />
