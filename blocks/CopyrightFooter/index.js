@@ -11,11 +11,6 @@ const Container = styled(Flex)`
 
   a {
     color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 

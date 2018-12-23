@@ -25,13 +25,13 @@ const ChildrenContainer = styled.div`
   bottom: 0;
 `;
 
-export default (props) => (
+export default ({ children, video }) => (
   <Container>
     <Video autoPlay loop muted preload="true">
-      <source src="https://elevationchurch.org/wp-content/uploads/2018/12/121618_TheExchangeZone_EC.org_.mp4" type="video/mp4" />
+      <source src={video} type="video/mp4" />
     </Video>
     <ChildrenContainer>
-      {props.children}
+      {children}
     </ChildrenContainer>
   </Container>
 );

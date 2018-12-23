@@ -8,8 +8,13 @@ import Button from '../components/Button';
 import Logo from '../components/Logo';
 import VideoBanner from '../components/VideoBanner';
 import CommonHead from '../components/CommonHead';
+import { getHomepageData } from '../services/prismic';
 
 export default class extends React.Component {
+  static async getInitialProps() {
+    return getHomepageData().then(document => ({ document }));
+  }
+
   render() {
     return (
       <div>
@@ -17,12 +22,12 @@ export default class extends React.Component {
           <title>Dreamer's Church</title>
           <CommonHead />
         </Head>
-        <VideoBanner>
+        {this.props.pageProps.document && <VideoBanner video={this.props.pageProps.document.data.banner_video.url}>
           <Logo />
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
             <Button>Watch Now</Button>
           </Flex>
-        </VideoBanner>
+        </VideoBanner>}
         <AppAd document={this.props.commonData} />
       </div>
     )

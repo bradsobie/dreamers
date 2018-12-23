@@ -13,8 +13,12 @@ const Container = styled.div`
 export default () => (
   <Container>
     <Flex justifyContent="center" p={3}>
-      <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
-      <FontAwesomeIcon icon={faInstagram} size="2x" />
+      <a href="https://www.facebook.com/dreamerschurchatx/">
+        <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+      </a>
+      <a href="https://www.instagram.com/dreamerschurchatx/">
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </a>
     </Flex>
   </Container>
 );
