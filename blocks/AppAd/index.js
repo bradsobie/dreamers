@@ -17,16 +17,18 @@ const Container = styled(Flex)`
 
 const Headline = styled.h2`
   font-weight: 400;
+  font-size: 30px;
 `;
 
 const Paragraph = styled.p`
   color: rgba(0, 0, 0, 0.54);
+  line-height: 1.6;
 `;
 
 export default ({ document }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
-      <img src="/static/app.gif" height="350px" style={{ marginRight: '20px' }} />
+      <img src="/static/app.gif" height="350px" style={{ marginRight: '60px' }} />
     </Box>
     <Box order={[1, 2]}>
       <Headline>{RichText.asText(document.data.app_headline)}</Headline>
