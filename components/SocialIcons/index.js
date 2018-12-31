@@ -9,6 +9,14 @@ import {
 const Container = styled.div`
   background-color: #ddd;
 
+  a {
+    transition: opacity 0.15s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   a:not(:last-child) {
     margin-right: 64px;
   }

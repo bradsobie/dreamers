@@ -25,10 +25,18 @@ const Paragraph = styled.p`
   line-height: 1.6;
 `;
 
+const AppImage = styled.img`
+  height: 350px;
+
+  @media (min-width: 640px) {
+    margin-right: 60px;
+  }
+`;
+
 export default ({ document }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
-      <img src="/static/app.gif" height="350px" style={{ marginRight: '60px' }} />
+      <AppImage src="/static/app.gif" />
     </Box>
     <Box order={[1, 2]}>
       <Headline>{RichText.asText(document.data.app_headline)}</Headline>

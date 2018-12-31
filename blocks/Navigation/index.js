@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Anchor = styled.a`
   cursor: pointer;
+  transition: opacity 0.15s;
 
   &:not(:last-child) {
     margin-right: 32px;
@@ -11,6 +12,7 @@ const Anchor = styled.a`
 
   &:hover {
     text-decoration: none;
+    opacity: 0.7;
   }
 `;
 
