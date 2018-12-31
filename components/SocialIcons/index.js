@@ -10,7 +10,7 @@ const Container = styled.div`
   background-color: #ddd;
 
   a:not(:last-child) {
-    margin-right: 32px;
+    margin-right: 64px;
   }
 `;
 

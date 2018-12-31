@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Logo = styled.h1`
@@ -8,8 +9,11 @@ const Logo = styled.h1`
   left: 16px;
   margin: 0;
   word-spacing: 100vw;
+  cursor: pointer;
 `;
 
 export default () => (
-  <Logo>Dreamer's Church</Logo>
+  <Link href="/">
+    <Logo>Dreamer's Church</Logo>
+  </Link>
 );

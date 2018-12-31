@@ -7,7 +7,6 @@ import AppAd from '../blocks/AppAd';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
 import VideoBanner from '../components/VideoBanner';
-import CommonHead from '../components/CommonHead';
 import { getHomepageData } from '../services/prismic';
 
 export default class extends React.Component {
@@ -20,7 +19,6 @@ export default class extends React.Component {
       <div>
         <Head>
           <title>Dreamer's Church</title>
-          <CommonHead />
         </Head>
         {this.props.pageProps.document && <VideoBanner video={this.props.pageProps.document.data.banner_video.url}>
           <Logo />
