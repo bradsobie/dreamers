@@ -9,7 +9,7 @@ import {
 const Container = styled.div`
   background-color: #ddd;
 
-  a {
+  a:not(:first-child) {
     margin-right: 32px;
   }
 `;
