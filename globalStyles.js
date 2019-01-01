@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
 
   a {
@@ -14,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: inherit;
+  }
+
+  p {
+    line-height: 1.5;
   }
 `;
 
