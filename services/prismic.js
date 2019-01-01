@@ -1,5 +1,6 @@
 import Prismic from 'prismic-javascript';
-import { PRISMIC_API } from '../constants';
+
+const PRISMIC_API = 'https://dreamers.cdn.prismic.io/api/v2';
 
 export const getApi = () => Prismic.api(PRISMIC_API);
 

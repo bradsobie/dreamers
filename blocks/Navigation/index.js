@@ -2,6 +2,7 @@ import { Flex } from '@rebass/grid';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Link from '../../components/Link';
+import { NAVIGATION } from '../../constants';
 
 const Anchor = styled(Link)`
   &:not(:last-child) {
@@ -11,11 +12,10 @@ const Anchor = styled(Link)`
 
 export default () => (
   <Flex alignItems="center" justifyContent="center">
-    <NextLink href="/about">
-      <Anchor>About</Anchor>
-    </NextLink>
-    <NextLink href="/sermons">
-      <Anchor>Sermons</Anchor>
-    </NextLink>
+    {NAVIGATION.map(({ text, url }) => (
+      <NextLink href={url}>
+        <Anchor>{text}</Anchor>
+      </NextLink>
+    ))}
   </Flex>
 );

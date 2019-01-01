@@ -1,1 +1,4 @@
-export const PRISMIC_API = 'https://dreamers.cdn.prismic.io/api/v2';
+export const NAVIGATION = [
+  { text: 'About', url: '/about' },
+  { text: 'Sermons', url: '/sermons' }
+];
