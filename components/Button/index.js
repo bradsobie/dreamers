@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.button`
+export default styled.a`
   background-color: #fff;
   font-size: 16px;
   color: #333;
