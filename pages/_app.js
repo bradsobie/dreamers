@@ -104,7 +104,8 @@ export default class MyApp extends App {
           contentClassName="sidebar-scroll-container"
           pullRight={true}
           styles={{
-            sidebar: { background: '#fff' }
+            sidebar: { background: '#fff', zIndex: 3 },
+            overlay: { zIndex: 2 }
           }}
         >
           <div>
