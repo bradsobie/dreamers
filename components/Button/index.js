@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export default styled.a`
   background-color: #fff;
   font-size: 16px;
+  border-radius: 4px;
   color: #333;
   appearance: none;
   border: 1px solid #e2e2e2;
