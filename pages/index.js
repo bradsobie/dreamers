@@ -8,10 +8,19 @@ import Button from '../components/Button';
 import Logo from '../components/Logo';
 import VideoBanner from '../components/VideoBanner';
 import { getHomepageData } from '../services/prismic';
+import { getLiveInfo } from '../services/churchOnline';
 
 export default class extends React.Component {
   static async getInitialProps() {
-    return getHomepageData().then(document => ({ document }));
+    return Promise.all([
+      getHomepageData(),
+      getLiveInfo()
+    ]).then(([homepageData, churchOnlineInfo]) => {
+      return {
+        document: homepageData,
+        churchOnlineInfo
+      };
+    });
   }
 
   render() {

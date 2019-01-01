@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Flex } from '@rebass/grid';
+import Countdown from 'react-countdown-now';
 
 const Banner = styled(Flex)`
   width: 100%;
@@ -9,8 +10,13 @@ const Banner = styled(Flex)`
   font-weight: 500;
 `;
 
-export default () => (
+const renderer = ({ days, hours, minutes, completed }) => {
+  if (completed) return 'We\'re live!';
+  return `Next service in ${days}d ${hours}h ${minutes}m`;
+};
+
+export default ({ isLive, serviceDate }) => (
   <Banner justifyContent="center" alignItems="center">
-    We're live!
+    <Countdown date={serviceDate} renderer={renderer} />
   </Banner>
 );
