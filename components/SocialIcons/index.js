@@ -9,7 +9,7 @@ import {
 import Link from '../Link';
 
 const Container = styled.div`
-  background-color: #ddd;
+  background-color: #ececec;
 
   a:not(:last-child) {
     margin-right: 64px;
