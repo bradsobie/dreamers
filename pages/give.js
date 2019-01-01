@@ -13,6 +13,14 @@ const Container = styled.div`
   padding: 16px;
 `;
 
+const GiveTitle = styled(PageTitle)`
+  font-size: 24px;
+
+  @media (max-width: 960px) {
+    margin-top: 32px;
+  }
+`;
+
 export default class extends React.Component {
   render() {
     return (
@@ -23,8 +31,9 @@ export default class extends React.Component {
         <VideoBanner
           video="https://elevationchurch.org/wp-content/uploads/2018/12/120818_Go4Broke_EC.org_.mp4"
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
-          <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-            <PageTitle>Give</PageTitle>
+          <Flex justifyContent="center" alignItems="center" flexDirection="column" css={{ height: '100%' }}>
+            <GiveTitle>Making an Impact. Leaving a Legacy.</GiveTitle>
+            <Button href="https://app.customgiving.com/give/dreamerschurch" target="_blank">Give now</Button>
           </Flex>
         </VideoBanner>
 
