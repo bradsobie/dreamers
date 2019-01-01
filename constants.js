@@ -1,7 +1,7 @@
 export const NAVIGATION = [
   { text: 'About', url: '/about' },
   { text: 'Sermons', url: '/sermons' },
-  { text: 'Give', url: '/give' },
+  { text: 'Giving', url: '/giving' },
   { text: 'Next Steps', url: '/nextsteps' }
 ];
 

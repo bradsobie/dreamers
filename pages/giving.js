@@ -26,7 +26,7 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>Dreamer's Church - Give</title>
+          <title>Dreamer's Church - Giving</title>
         </Head>
         <VideoBanner
           video="https://elevationchurch.org/wp-content/uploads/2018/12/120818_Go4Broke_EC.org_.mp4"
