@@ -5,6 +5,9 @@ import { Flex } from '@rebass/grid';
 import PageTitle from '../components/PageTitle';
 import Logo from '../components/Logo';
 import VideoBanner from '../components/VideoBanner';
+import YoutubePlaylist from '../components/YoutubePlaylist';
+
+const YOUTUBE_CHANNEL_ID = 'UUAN8hiFKUYfvBWONFKzRHCw';
 
 export default class extends React.Component {
   render() {
@@ -19,6 +22,7 @@ export default class extends React.Component {
             <PageTitle>Sermons</PageTitle>
           </Flex>
         </VideoBanner>
+        <YoutubePlaylist playlistId={YOUTUBE_CHANNEL_ID} />
       </div>
     )
   }
