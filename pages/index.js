@@ -31,7 +31,9 @@ export default class extends React.Component {
         {this.props.pageProps.document &&
           <VideoBanner
             video={this.props.pageProps.document.data.banner_video.url}
-            onOpenMenuClicked={this.props.onOpenMenuClicked}>
+            onOpenMenuClicked={this.props.onOpenMenuClicked}
+            containerHeight="500px"
+            mobileContainerHeight="300px">
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
               <Button href="https://dreamers-atx.churchonline.org" target="_blank">Watch Now</Button>
             </Flex>

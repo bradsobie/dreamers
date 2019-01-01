@@ -15,12 +15,12 @@ const Video = styled.video`
 `;
 
 const Container = styled.div`
-  height: 500px;
+  height: ${props => props.containerHeight || '300px'};
   position: relative;
   overflow: hidden;
 
   @media (max-width: 960px) {
-    height: 300px;
+    height: ${props => props.mobileContainerHeight || '250px'};
   }
 `;
 
@@ -54,8 +54,8 @@ const Button = styled.button`
   color: #fff;
 `;
 
-export default ({ children, video, onOpenMenuClicked }) => (
-  <Container>
+export default ({ children, video, onOpenMenuClicked, containerHeight, mobileContainerHeight }) => (
+  <Container containerHeight={containerHeight} mobileContainerHeight={mobileContainerHeight}>
     <Video autoPlay loop muted preload="true">
       <source src={video} type="video/mp4" />
     </Video>
