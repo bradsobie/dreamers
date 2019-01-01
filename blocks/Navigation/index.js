@@ -12,8 +12,8 @@ const Anchor = styled(Link)`
 
 export default () => (
   <Flex alignItems="center" justifyContent="center">
-    {NAVIGATION.map(({ text, url }) => (
-      <NextLink href={url}>
+    {NAVIGATION.map(({ text, url }, index) => (
+      <NextLink href={url} key={index}>
         <Anchor>{text}</Anchor>
       </NextLink>
     ))}

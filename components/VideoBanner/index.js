@@ -1,4 +1,8 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import Media from 'react-media';
 import Logo from '../Logo';
 import Navigation from '../../blocks/Navigation';
 import { Flex } from '@rebass/grid';
@@ -42,15 +46,36 @@ const CommonContainer = styled(Flex)`
   }
 `;
 
-export default ({ children, video }) => (
+const Button = styled.button`
+  background: none;
+  outline: none;
+  appearance: none;
+  border: none;
+  color: #fff;
+`;
+
+export default ({ children, video, onOpenMenuClicked }) => (
   <Container>
     <Video autoPlay loop muted preload="true">
       <source src={video} type="video/mp4" />
     </Video>
     <CommonContainer justifyContent="space-between" alignItems="center">
       <Logo />
-      <Navigation />
-      <div style={{ width: '231px' }} />
+
+      <Media query="(max-width: 960px)">
+        {matches =>
+          matches ? (
+            <Button onClick={() => onOpenMenuClicked(true)}>
+              <FontAwesomeIcon icon={faBars} size="2x" />
+            </Button>
+          ) : (
+            <Fragment>
+              <Navigation />
+              <div style={{ width: '231px' }} />
+            </Fragment>
+          )
+        }
+      </Media>
     </CommonContainer>
     <ChildrenContainer>
       {children}

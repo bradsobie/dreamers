@@ -15,7 +15,9 @@ export default class extends React.Component {
         <Head>
           <title>Dreamer's Church - Sermons</title>
         </Head>
-        <VideoBanner video="https://elevationchurch.org/wp-content/uploads/2018/12/120818_Go4Broke_EC.org_.mp4">
+        <VideoBanner
+          video="https://elevationchurch.org/wp-content/uploads/2018/12/120818_Go4Broke_EC.org_.mp4"
+          onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
             <PageTitle>Sermons</PageTitle>
           </Flex>

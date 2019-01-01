@@ -1,6 +1,8 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
+import Router from 'next/router'
 import styled from 'styled-components';
+import Sidebar from 'react-sidebar';
 import GlobalStyles from '../globalStyles';
 import { getCommonData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
@@ -8,6 +10,7 @@ import CopyrightFooter from '../blocks/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
 import LiveBanner from '../components/LiveBanner';
 import Navigation from '../blocks/Navigation';
+import MenuContent from '../components/MenuContent';
 
 const NavContainer = styled.div`
   background-color: #f7f7f7;
@@ -15,6 +18,13 @@ const NavContainer = styled.div`
 `;
 
 export default class MyApp extends App {
+  constructor(props) {
+    super(props);
+    this.state = { isMenuOpen: false };
+    this.onOpenMenuClicked = this.onOpenMenuClicked.bind(this);
+    this.handleRouteChange = this.handleRouteChange.bind(this);
+  }
+
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -38,6 +48,22 @@ export default class MyApp extends App {
     };
   }
 
+  handleRouteChange() {
+    this.setState({ isMenuOpen: false });
+  }
+
+  componentDidMount() {
+    Router.events.on('routeChangeStart', this.handleRouteChange);
+  }
+
+  componentWillUnmount() {
+    Router.events.off('routeChangeStart', this.handleRouteChange);
+  }
+
+  onOpenMenuClicked(value) {
+    this.setState({ isMenuOpen: value });
+  }
+
   render () {
     const { Component } = this.props;
 
@@ -50,15 +76,28 @@ export default class MyApp extends App {
           <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
         </Head>
         <GlobalStyles />
-        <LiveBanner
-          isLive={this.props.commonData.isLive}
-          serviceDate={this.props.commonData.eventStartTime} />
-        <Component {...this.props} />
-        <NavContainer>
-          <Navigation />
-        </NavContainer>
-        <SocialIcons />
-        <CopyrightFooter document={this.props.commonData} />
+
+        <Sidebar
+          sidebar={<MenuContent />}
+          open={this.state.isMenuOpen}
+          onSetOpen={this.onOpenMenuClicked}
+          pullRight={true}
+          styles={{
+            sidebar: { background: '#333' }
+          }}
+        >
+          <div>
+            <LiveBanner
+              isLive={this.props.commonData.isLive}
+              serviceDate={this.props.commonData.eventStartTime} />
+            <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
+            <NavContainer>
+              <Navigation />
+            </NavContainer>
+            <SocialIcons />
+            <CopyrightFooter document={this.props.commonData} />
+          </div>
+        </Sidebar>
       </Container>
     );
   }

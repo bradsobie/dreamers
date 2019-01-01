@@ -28,11 +28,15 @@ export default class extends React.Component {
         <Head>
           <title>Dreamer's Church</title>
         </Head>
-        {this.props.pageProps.document && <VideoBanner video={this.props.pageProps.document.data.banner_video.url}>
-          <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-            <Button>Watch Now</Button>
-          </Flex>
-        </VideoBanner>}
+        {this.props.pageProps.document &&
+          <VideoBanner
+            video={this.props.pageProps.document.data.banner_video.url}
+            onOpenMenuClicked={this.props.onOpenMenuClicked}>
+            <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
+              <Button>Watch Now</Button>
+            </Flex>
+          </VideoBanner>
+        }
         <AppAd document={this.props.commonData} />
       </div>
     )
