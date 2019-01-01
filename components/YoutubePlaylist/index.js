@@ -10,6 +10,7 @@ const Iframe = styled.iframe`
   @media (max-width: 700px) {
     width: 100%;
     height: 250px;
+    padding: 0 16px;
   }
 `;
 

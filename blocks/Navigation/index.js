@@ -1,18 +1,11 @@
 import { Flex } from '@rebass/grid';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import styled from 'styled-components';
+import Link from '../../components/Link';
 
-const Anchor = styled.a`
-  cursor: pointer;
-  transition: opacity 0.15s;
-
+const Anchor = styled(Link)`
   &:not(:last-child) {
     margin-right: 32px;
-  }
-
-  &:hover {
-    text-decoration: none;
-    opacity: 0.7;
   }
 `;
 
@@ -24,12 +17,12 @@ const Container = styled.div`
 export default () => (
   <Container>
     <Flex alignItems="center" justifyContent="center">
-      <Link href="/about">
+      <NextLink href="/about">
         <Anchor>About</Anchor>
-      </Link>
-      <Link href="/sermons">
+      </NextLink>
+      <NextLink href="/sermons">
         <Anchor>Sermons</Anchor>
-      </Link>
+      </NextLink>
     </Flex>
   </Container>
 );
