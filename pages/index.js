@@ -27,6 +27,7 @@ const SermonTitle = styled.h4`
   font-weight: 500;
   color: #fff;
   margin: 8px 0 16px 0;
+  text-align: center;
 `;
 
 export default class extends React.Component {
