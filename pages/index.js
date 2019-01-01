@@ -30,6 +30,16 @@ const SermonTitle = styled.h4`
   text-align: center;
 `;
 
+const BannerContainer = styled(Flex).attrs({
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center'
+})`
+  @media (max-width: 960px) {
+    margin-top: 32px;
+  }
+`;
+
 export default class extends React.Component {
   static async getInitialProps() {
     return Promise.all([
@@ -56,7 +66,7 @@ export default class extends React.Component {
             containerHeight="500px"
             mobileContainerHeight="300px">
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-              <Flex flexDirection="column" justifyContent="center" alignItems="center">
+              <BannerContainer>
                 <LatestSermon>Latest Sermon</LatestSermon>
                 <SermonTitle>{this.props.pageProps.latestVideo && this.props.pageProps.latestVideo.snippet.title}</SermonTitle>
                 <Link href="/sermons">
@@ -65,7 +75,7 @@ export default class extends React.Component {
                 <div>
                   <ArrowImage height="12px" src="/static/arrow.svg" />
                 </div>
-              </Flex>
+              </BannerContainer>
             </Flex>
           </VideoBanner>
         }
