@@ -9,7 +9,7 @@ import AppAd from '../blocks/AppAd';
 import Button from '../components/Button';
 import VideoBanner from '../components/VideoBanner';
 import { getHomepageData } from '../services/prismic';
-import { getLiveInfo } from '../services/churchOnline';
+import { getVideos } from '../services/youtube';
 
 const ArrowImage = styled.img`
   margin-top: 16px;
@@ -33,11 +33,11 @@ export default class extends React.Component {
   static async getInitialProps() {
     return Promise.all([
       getHomepageData(),
-      getLiveInfo()
-    ]).then(([homepageData, churchOnlineInfo]) => {
+      getVideos()
+    ]).then(([homepageData, videos]) => {
       return {
         document: homepageData,
-        churchOnlineInfo
+        latestVideo: videos[0]
       };
     });
   }
@@ -57,7 +57,7 @@ export default class extends React.Component {
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
               <Flex flexDirection="column" justifyContent="center" alignItems="center">
                 <LatestSermon>Latest Sermon</LatestSermon>
-                <SermonTitle>The Gift of Community</SermonTitle>
+                <SermonTitle>{this.props.pageProps.latestVideo && this.props.pageProps.latestVideo.snippet.title}</SermonTitle>
                 <Link href="/sermons">
                   <Button>Watch Now</Button>
                 </Link>
