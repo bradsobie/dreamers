@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Flex } from '@rebass/grid';
+import Link from 'next/link';
 
 import AppAd from '../blocks/AppAd';
 
@@ -35,7 +36,9 @@ export default class extends React.Component {
             containerHeight="500px"
             mobileContainerHeight="300px">
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-              <Button href="https://dreamers-atx.churchonline.org" target="_blank">Watch Now</Button>
+              <Link href="/sermons">
+                <Button>Watch Now</Button>
+              </Link>
             </Flex>
           </VideoBanner>
         }

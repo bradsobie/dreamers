@@ -13,4 +13,5 @@ export default styled.a`
   letter-spacing: 1px;
   font-weight: 600;
   display: inline-block;
+  cursor: pointer;
 `;
