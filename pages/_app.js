@@ -14,7 +14,11 @@ import MenuContent from '../components/MenuContent';
 
 const NavContainer = styled.div`
   background-color: #f7f7f7;
-  padding: 32px 8px;
+  padding: 16px 8px;
+  
+  a {
+    padding: 16px;
+  }
 `;
 
 export default class MyApp extends App {
@@ -109,7 +113,7 @@ export default class MyApp extends App {
               serviceDate={this.props.commonData.eventStartTime} />
             <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
             <NavContainer>
-              <Navigation />
+              <Navigation flexWrap="wrap" />
             </NavContainer>
             <SocialIcons />
             <CopyrightFooter document={this.props.commonData} />

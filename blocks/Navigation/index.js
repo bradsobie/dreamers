@@ -10,8 +10,8 @@ const Anchor = styled(Link)`
   }
 `;
 
-export default () => (
-  <Flex alignItems="center" justifyContent="center">
+export default ({ flexWrap }) => (
+  <Flex alignItems="center" justifyContent="center" flexWrap={flexWrap || 'initial'}>
     {NAVIGATION.map(({ text, url, external }, index) => (
       external ? <Anchor href={url} target="_blank" key={index}>{text}</Anchor> :
       <NextLink href={url} key={index}>
