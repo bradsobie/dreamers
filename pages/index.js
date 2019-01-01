@@ -28,6 +28,10 @@ const SermonTitle = styled.h4`
   color: #fff;
   margin: 8px 0 16px 0;
   text-align: center;
+
+  @media (max-width: 960px) {
+    font-size: 22px;
+  }
 `;
 
 const BannerContainer = styled(Flex).attrs({
@@ -35,8 +39,16 @@ const BannerContainer = styled(Flex).attrs({
   justifyContent: 'center',
   alignItems: 'center'
 })`
+  padding: 0 16px;
   @media (max-width: 960px) {
     margin-top: 32px;
+  }
+`;
+
+const WatchNowButton = styled(Button)`
+  @media (max-width: 960px) {
+    font-size: 14px;
+    padding: 14px 22px;
   }
 `;
 
@@ -70,7 +82,7 @@ export default class extends React.Component {
                 <LatestSermon>Latest Sermon</LatestSermon>
                 <SermonTitle>{this.props.pageProps.latestVideo && this.props.pageProps.latestVideo.snippet.title}</SermonTitle>
                 <Link href="/sermons">
-                  <Button>Watch Now</Button>
+                  <WatchNowButton>Watch Now</WatchNowButton>
                 </Link>
                 <div>
                   <ArrowImage height="12px" src="/static/arrow.svg" />
