@@ -24,6 +24,7 @@ export default class MyApp extends App {
     this.onOpenMenuClicked = this.onOpenMenuClicked.bind(this);
     this.onCloseMenuClicked = this.onCloseMenuClicked.bind(this);
     this.handleRouteChange = this.handleRouteChange.bind(this);
+    this.handleRouteChangeEnd = this.handleRouteChangeEnd.bind(this);
   }
 
   static async getInitialProps({ Component, router, ctx }) {
@@ -53,12 +54,18 @@ export default class MyApp extends App {
     this.setState({ isMenuOpen: false });
   }
 
+  handleRouteChangeEnd() {
+    document.querySelector('.sidebar-scroll-container').scrollTop = 0;
+  }
+
   componentDidMount() {
     Router.events.on('routeChangeStart', this.handleRouteChange);
+    Router.events.on('routeChangeComplete', this.handleRouteChangeEnd);
   }
 
   componentWillUnmount() {
     Router.events.off('routeChangeStart', this.handleRouteChange);
+    Router.events.off('routeChangeComplete', this.handleRouteChangeEnd);
   }
 
   onOpenMenuClicked() {
@@ -90,6 +97,7 @@ export default class MyApp extends App {
           sidebar={<MenuContent onCloseMenuClicked={this.onCloseMenuClicked} />}
           open={this.state.isMenuOpen}
           onSetOpen={this.onOpenMenuClicked}
+          contentClassName="sidebar-scroll-container"
           pullRight={true}
           styles={{
             sidebar: { background: '#fff' }
