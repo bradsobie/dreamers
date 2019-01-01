@@ -9,20 +9,13 @@ const Anchor = styled(Link)`
   }
 `;
 
-const Container = styled.div`
-  background-color: #f7f7f7;
-  padding: 32px 8px;
-`;
-
 export default () => (
-  <Container>
-    <Flex alignItems="center" justifyContent="center">
-      <NextLink href="/about">
-        <Anchor>About</Anchor>
-      </NextLink>
-      <NextLink href="/sermons">
-        <Anchor>Sermons</Anchor>
-      </NextLink>
-    </Flex>
-  </Container>
+  <Flex alignItems="center" justifyContent="center">
+    <NextLink href="/about">
+      <Anchor>About</Anchor>
+    </NextLink>
+    <NextLink href="/sermons">
+      <Anchor>Sermons</Anchor>
+    </NextLink>
+  </Flex>
 );

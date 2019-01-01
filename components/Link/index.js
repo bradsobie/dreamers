@@ -7,6 +7,6 @@ export default styled.a`
 
   &:hover {
     text-decoration: none;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;

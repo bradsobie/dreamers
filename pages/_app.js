@@ -1,5 +1,6 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
+import styled from 'styled-components';
 import GlobalStyles from '../globalStyles';
 import { getCommonData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
@@ -7,6 +8,11 @@ import CopyrightFooter from '../blocks/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
 import LiveBanner from '../components/LiveBanner';
 import Navigation from '../blocks/Navigation';
+
+const NavContainer = styled.div`
+  background-color: #f7f7f7;
+  padding: 32px 8px;
+`;
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -48,7 +54,9 @@ export default class MyApp extends App {
           isLive={this.props.commonData.isLive}
           serviceDate={this.props.commonData.eventStartTime} />
         <Component {...this.props} />
-        <Navigation />
+        <NavContainer>
+          <Navigation />
+        </NavContainer>
         <SocialIcons />
         <CopyrightFooter document={this.props.commonData} />
       </Container>

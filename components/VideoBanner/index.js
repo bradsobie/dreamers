@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import Logo from '../Logo';
+import Navigation from '../../blocks/Navigation';
+import { Flex } from '@rebass/grid';
 
 const Video = styled.video`
   object-position: top center;
@@ -25,11 +28,30 @@ const ChildrenContainer = styled.div`
   bottom: 0;
 `;
 
+const CommonContainer = styled(Flex)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 16px;
+
+  a {
+    color: #fff;
+    font-size: 16px;
+  }
+`;
+
 export default ({ children, video }) => (
   <Container>
     <Video autoPlay loop muted preload="true">
       <source src={video} type="video/mp4" />
     </Video>
+    <CommonContainer justifyContent="space-between" alignItems="center">
+      <Logo />
+      <Navigation />
+      <div style={{ width: '231px' }} />
+    </CommonContainer>
     <ChildrenContainer>
       {children}
     </ChildrenContainer>
