@@ -22,6 +22,7 @@ export default class MyApp extends App {
     super(props);
     this.state = { isMenuOpen: false };
     this.onOpenMenuClicked = this.onOpenMenuClicked.bind(this);
+    this.onCloseMenuClicked = this.onCloseMenuClicked.bind(this);
     this.handleRouteChange = this.handleRouteChange.bind(this);
   }
 
@@ -60,7 +61,15 @@ export default class MyApp extends App {
     Router.events.off('routeChangeStart', this.handleRouteChange);
   }
 
-  onOpenMenuClicked(value) {
+  onOpenMenuClicked() {
+    this.setMenuOpen(true);
+  }
+
+  onCloseMenuClicked() {
+    this.setMenuOpen(false);
+  }
+
+  setMenuOpen(value) {
     this.setState({ isMenuOpen: value });
   }
 
@@ -78,12 +87,12 @@ export default class MyApp extends App {
         <GlobalStyles />
 
         <Sidebar
-          sidebar={<MenuContent />}
+          sidebar={<MenuContent onCloseMenuClicked={this.onCloseMenuClicked} />}
           open={this.state.isMenuOpen}
           onSetOpen={this.onOpenMenuClicked}
           pullRight={true}
           styles={{
-            sidebar: { background: '#333' }
+            sidebar: { background: '#fff' }
           }}
         >
           <div>
