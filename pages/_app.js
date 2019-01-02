@@ -29,6 +29,7 @@ export default class MyApp extends App {
     this.onCloseMenuClicked = this.onCloseMenuClicked.bind(this);
     this.handleRouteChange = this.handleRouteChange.bind(this);
     this.handleRouteChangeEnd = this.handleRouteChangeEnd.bind(this);
+    this.onSetOpen = this.onSetOpen.bind(this);
   }
 
   static async getInitialProps({ Component, router, ctx }) {
@@ -59,7 +60,7 @@ export default class MyApp extends App {
   }
 
   handleRouteChangeEnd() {
-    document.querySelector('.sidebar-scroll-container').scrollTop = 0;
+    document.getElementById('sidebar-scroll-container').scrollTop = 0;
   }
 
   componentDidMount() {
@@ -70,6 +71,10 @@ export default class MyApp extends App {
   componentWillUnmount() {
     Router.events.off('routeChangeStart', this.handleRouteChange);
     Router.events.off('routeChangeComplete', this.handleRouteChangeEnd);
+  }
+
+  onSetOpen(open) {
+    this.setMenuOpen(open);
   }
 
   onOpenMenuClicked() {
@@ -100,12 +105,13 @@ export default class MyApp extends App {
         <Sidebar
           sidebar={<MenuContent onCloseMenuClicked={this.onCloseMenuClicked} />}
           open={this.state.isMenuOpen}
-          onSetOpen={this.onOpenMenuClicked}
-          contentClassName="sidebar-scroll-container"
+          onSetOpen={this.onSetOpen}
+          contentId="sidebar-scroll-container"
           pullRight={true}
           styles={{
             sidebar: { background: '#fff', zIndex: 3 },
-            overlay: { zIndex: 2 }
+            overlay: { zIndex: 2 },
+            dragHandle: { zIndex: 2 }
           }}
         >
           <div>
