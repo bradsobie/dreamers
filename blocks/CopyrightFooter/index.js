@@ -28,7 +28,7 @@ export default ({ document }) => (
     <Info>
       <Link href="https://goo.gl/maps/U1Jho3buttk" target="_blank">3901 Speedway, Austin, TX 78751</Link>
       <span> | </span>
-      <Link href="tel:(512) 123-1234">(512) 123-1234</Link>
+      <Link href="tel:(512) 537-5871">(512) 537-5871</Link>
     </Info>
     <Copyright>
       {RichText.asText(document.data.copyright)}
