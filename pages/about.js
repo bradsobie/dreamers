@@ -36,6 +36,10 @@ const OrderedList = styled.ol`
   }
 `;
 
+const EmphesizedValue = styled.span`
+  font-weight: 500;
+`;
+
 export default class extends React.Component {
   render() {
     return (
@@ -80,25 +84,25 @@ export default class extends React.Component {
 
             <OrderedList>
               <li>
-                <div>We value people ENCOUNTERING GOD.</div>
+                <div>We value people <EmphesizedValue>ENCOUNTERING GOD</EmphesizedValue>.</div>
                 <p>
                   This starts with a relationship with Jesus Christ, but it continues with moments in His presence where we encounter His love and purpose for our life. We can also daily encounter God as we spend time in the Word, this will inspire us to keep dreaming and reaching for all He has for us.
                 </p>
               </li>
               <li>
-                <div>We value people FINDING COMMUNITY.</div>
+                <div>We value people <EmphesizedValue>FINDING COMMUNITY</EmphesizedValue>.</div>
                 <p>
                   You were created by God to be in community. We have small groups that meet at different times, on different days, and each with their own unique focus. We were designed by God to thrive in community. Our small groups have two common denominators; Creating authentic community and helping people in their discipleship journey. In short, we want to build relationships to know how to best help people take the next step in their journey.
                 </p>
               </li>
               <li>
-                <div>We value people DISCOVERING THEIR PURPOSE.</div>
+                <div>We value people <EmphesizedValue>DISCOVERING THEIR PURPOSE</EmphesizedValue>.</div>
                 <p>
                   We have a class each Sunday right after church called Next Steps that helps you get started in discovering your purpose.
                 </p>
               </li>
               <li>
-                <div>We value people BEING EMPOWERED to change their world.</div>
+                <div>We value people <EmphesizedValue>BEING EMPOWERED</EmphesizedValue> to change their world.</div>
                 <p>
                 All of us are called to impact the lives around us. The more we learn what God says about us, the more we understand that we are Sons and Daughters of the King, call and empowered to do great things here on earth.
                 </p>
