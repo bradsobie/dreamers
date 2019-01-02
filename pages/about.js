@@ -23,7 +23,6 @@ const Section = styled.section`
 `;
 
 const OrderedList = styled.ol`
-  line-height: 1.5;
   padding-left: 16px;
 
   li {
