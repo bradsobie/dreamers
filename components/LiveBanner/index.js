@@ -17,6 +17,7 @@ const Banner = styled(Flex)`
   background-color: #333;
   color: #fff;
   font-weight: 500;
+  font-size: 14px;
 
   @media (max-width: 500px) {
     font-size: 12px;
