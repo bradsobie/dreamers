@@ -11,6 +11,7 @@ import SocialIcons from '../components/SocialIcons';
 import LiveBanner from '../components/LiveBanner';
 import Navigation from '../blocks/Navigation';
 import MenuContent from '../components/MenuContent';
+import AppAd from '../blocks/AppAd';
 
 const NavContainer = styled.div`
   background-color: #f7f7f7;
@@ -119,6 +120,7 @@ export default class MyApp extends App {
               isLive={this.props.commonData.isLive}
               serviceDate={this.props.commonData.eventStartTime} />
             <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
+            <AppAd document={this.props.commonData} />
             <NavContainer>
               <Navigation flexWrap="wrap" />
             </NavContainer>

@@ -4,8 +4,6 @@ import { Flex } from '@rebass/grid';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import AppAd from '../blocks/AppAd';
-
 import Button from '../components/Button';
 import VideoBanner from '../components/VideoBanner';
 import { getHomepageData } from '../services/prismic';
@@ -91,7 +89,6 @@ export default class extends React.Component {
             </Flex>
           </VideoBanner>
         }
-        <AppAd document={this.props.commonData} />
       </div>
     )
   }

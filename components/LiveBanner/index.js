@@ -26,7 +26,7 @@ const renderer = ({ days, hours, minutes, completed }) => {
       <WatchNowButton href={WATCH_NOW_LINK} target="_blank">Watch now</WatchNowButton>
     </Flex>
   );
-  return `Next service in ${days}d ${hours}h ${minutes}m`;
+  return `Next service is Sunday at 4:30 PM. ${days}d ${hours}h ${minutes}m`;
 };
 
 export default ({ isLive, serviceDate }) => (
