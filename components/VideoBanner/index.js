@@ -62,7 +62,7 @@ export default ({ children, video, onOpenMenuClicked, containerHeight, mobileCon
     <CommonContainer justifyContent="space-between" alignItems="center">
       <Logo />
 
-      <Media query="(max-width: 960px)">
+      <Media query="(max-width: 1050px)">
         {matches =>
           matches ? (
             <Button onClick={() => onOpenMenuClicked(true)}>
