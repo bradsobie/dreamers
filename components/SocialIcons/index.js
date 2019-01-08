@@ -3,7 +3,8 @@ import styled from  'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookSquare,
-  faInstagram
+  faInstagram,
+  faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
 import Link from '../Link';
@@ -24,6 +25,9 @@ export default () => (
       </Link>
       <Link href="https://www.instagram.com/dreamerschurchatx/" target="_blank">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </Link>
+      <Link href="https://www.youtube.com/channel/UCAN8hiFKUYfvBWONFKzRHCw" target="_blank">
+        <FontAwesomeIcon icon={faYoutube} size="2x" />
       </Link>
     </Flex>
   </Container>
