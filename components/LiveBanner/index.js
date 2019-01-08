@@ -17,6 +17,10 @@ const Banner = styled(Flex)`
   background-color: #333;
   color: #fff;
   font-weight: 500;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 `;
 
 const renderer = ({ days, hours, minutes, completed }) => {
