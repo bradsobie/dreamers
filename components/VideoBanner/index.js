@@ -54,11 +54,30 @@ const Button = styled.button`
   color: #fff;
 `;
 
+const Arrows = styled.img.attrs({
+  src: '/static/arrows.svg'
+})`
+  position: absolute;
+  top: ${props => props.top};
+  ${props => props.position}: 22px;
+  z-index: 1;
+  height: 40px;
+  ${props => props.position === 'left' ? 'transform: rotate(180deg);' : ''}
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+`;
+
 export default ({ children, video, onOpenMenuClicked, containerHeight, mobileContainerHeight }) => (
   <Container containerHeight={containerHeight} mobileContainerHeight={mobileContainerHeight}>
     <Video autoPlay loop muted preload="true">
       <source src={video} type="video/mp4" />
     </Video>
+
+    <Arrows position="left" top="80%" />
+    <Arrows position="right" top="20%" />
+    
     <CommonContainer justifyContent="space-between" alignItems="center">
       <Logo />
 
