@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  p {
+  p, li {
     line-height: 1.7;
   }
 `;
