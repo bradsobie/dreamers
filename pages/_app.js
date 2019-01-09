@@ -12,6 +12,14 @@ import LiveBanner from '../components/LiveBanner';
 import Navigation from '../blocks/Navigation';
 import MenuContent from '../components/MenuContent';
 import AppAd from '../blocks/AppAd';
+import { initializeGA, logPageView } from '../services/analytics';
+import {
+  CHURCH_NAME,
+  SITE_URL,
+  META_DESCRIPTION,
+  META_KEYWORDS,
+  OG_IMAGE
+} from '../constants';
 
 const NavContainer = styled.div`
   background-color: #f7f7f7;
@@ -61,12 +69,15 @@ export default class MyApp extends App {
   }
 
   handleRouteChangeEnd() {
+    logPageView();
     document.getElementById('sidebar-scroll-container').scrollTop = 0;
   }
 
   componentDidMount() {
     Router.events.on('routeChangeStart', this.handleRouteChange);
     Router.events.on('routeChangeComplete', this.handleRouteChangeEnd);
+    initializeGA();
+    logPageView();
   }
 
   componentWillUnmount() {
@@ -98,6 +109,14 @@ export default class MyApp extends App {
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="robots" content="noindex" />
+          <meta property="og:title" content={CHURCH_NAME} />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={SITE_URL} />
+          <meta property="og:site_name" content={CHURCH_NAME} />
+          <meta property="og:description" content={META_DESCRIPTION} />
+          <meta property="og:image" content={OG_IMAGE} />
+          <meta name="description" content={META_DESCRIPTION} />
+          <meta name="keywords" content={META_KEYWORDS} />
           <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
           <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
         </Head>
