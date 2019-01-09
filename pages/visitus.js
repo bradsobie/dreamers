@@ -23,6 +23,14 @@ const GoogleMap = styled.iframe`
   }
 `;
 
+const Section = styled.section`
+  margin-bottom: 32px;
+
+  p {
+    line-height: 1;
+  }
+`;
+
 export default class extends React.Component {
   render() {
     return (
@@ -39,10 +47,18 @@ export default class extends React.Component {
         </VideoBanner>
 
         <Container>
+          <Section>
+            <h3>Time</h3>
+            <p>Services are Sundays at 4:30pm. Prayer starts at 4pm.</p>
+          </Section>
+          
+          <Section>
+            <h3>Location</h3>
             <GoogleMap
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.7164380155623!2d-97.7345392848788!3d30.302133181789277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644c9af78eb1abb%3A0x2e589dab1c4c17ec!2sDreamer&#39;s+Church!5e0!3m2!1sen!2sus!4v1546407580454"
-                frameborder="0"
-                allowfullscreen></GoogleMap>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.7164380155623!2d-97.7345392848788!3d30.302133181789277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644c9af78eb1abb%3A0x2e589dab1c4c17ec!2sDreamer&#39;s+Church!5e0!3m2!1sen!2sus!4v1546407580454"
+              frameborder="0"
+              allowfullscreen></GoogleMap>
+          </Section>
         </Container>
       </div>
     )
