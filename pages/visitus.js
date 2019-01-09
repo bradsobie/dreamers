@@ -25,10 +25,6 @@ const GoogleMap = styled.iframe`
 
 const Section = styled.section`
   margin-bottom: 32px;
-
-  p {
-    line-height: 1;
-  }
 `;
 
 export default class extends React.Component {
