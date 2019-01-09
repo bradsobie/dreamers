@@ -3,7 +3,8 @@ import {
   CHURCH_NAME,
   SITE_URL,
   META_DESCRIPTION,
-  META_KEYWORDS
+  META_KEYWORDS,
+  OG_IMAGE
 } from '../../constants';
 
 export default () => (
@@ -15,6 +16,7 @@ export default () => (
     <meta property="og:url" content={SITE_URL} />
     <meta property="og:site_name" content={CHURCH_NAME} />
     <meta property="og:description" content={META_DESCRIPTION} />
+    <meta property="og:image" content={OG_IMAGE} />
     <meta name="description" content={META_DESCRIPTION} />
     <meta name="keywords" content={META_KEYWORDS} />
     <link rel="shortcut icon" type="image/png" href="/static/favicon.png"/>
