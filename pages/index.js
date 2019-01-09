@@ -3,10 +3,11 @@ import Head from 'next/head';
 import { Flex } from '@rebass/grid';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { RichText } from 'prismic-reactjs';
 
 import Button from '../components/Button';
 import VideoBanner from '../components/VideoBanner';
-import { getHomepageData } from '../services/prismic';
+import { getPageData } from '../services/prismic';
 import { getVideos } from '../services/youtube';
 
 const ArrowImage = styled.img`
@@ -53,7 +54,7 @@ const WatchNowButton = styled(Button)`
 export default class extends React.Component {
   static async getInitialProps() {
     return Promise.all([
-      getHomepageData(),
+      getPageData('homepage'),
       getVideos()
     ]).then(([homepageData, videos]) => {
       return {
@@ -71,16 +72,16 @@ export default class extends React.Component {
         </Head>
         {this.props.pageProps.document &&
           <VideoBanner
-            video={this.props.pageProps.document.data.banner_video.url}
+            video={this.props.commonData.data.banner_video.url}
             onOpenMenuClicked={this.props.onOpenMenuClicked}
             containerHeight="500px"
             mobileContainerHeight="300px">
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
               <BannerContainer>
-                <LatestSermon>Latest Sermon</LatestSermon>
+                <LatestSermon>{RichText.asText(this.props.pageProps.document.data.banner_title)}</LatestSermon>
                 <SermonTitle>{this.props.pageProps.latestVideo && this.props.pageProps.latestVideo.snippet.title}</SermonTitle>
                 <Link href="/sermons">
-                  <WatchNowButton>Watch Now</WatchNowButton>
+                  <WatchNowButton>{RichText.asText(this.props.pageProps.document.data.banner_cta_text)}</WatchNowButton>
                 </Link>
                 <div>
                   <ArrowImage height="12px" src="/static/arrow.svg" />

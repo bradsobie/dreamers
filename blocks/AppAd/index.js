@@ -36,7 +36,7 @@ const AppImage = styled.img`
 export default ({ document }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
-      <AppImage src="/static/mobile_app.gif" />
+      <AppImage src={document.data.app_image.url} />
     </Box>
     <Box order={[1, 2]}>
       <Headline>{RichText.asText(document.data.app_headline)}</Headline>

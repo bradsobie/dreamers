@@ -20,7 +20,7 @@ export default class extends React.Component {
           <title>Dreamer's Church - Next Steps</title>
         </Head>
         <VideoBanner
-          video="https://prismic-io.s3.amazonaws.com/dreamers%2F1fede394-ee7e-4c86-b37c-aab2e9168a2e_header-achurchforthejourney.mp4"
+          video={this.props.commonData.data.banner_video.url}
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
             <PageTitle>Next Steps</PageTitle>

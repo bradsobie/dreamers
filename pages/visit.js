@@ -2,9 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
+import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
+import { getPageData } from '../services/prismic';
 
 const Container = styled.div`
   max-width: 700px;
@@ -28,6 +30,11 @@ const Section = styled.section`
 `;
 
 export default class extends React.Component {
+  static async getInitialProps() {
+    return getPageData('visit')
+      .then(document => ({ document }));
+  }
+
   render() {
     return (
       <div>
@@ -35,7 +42,7 @@ export default class extends React.Component {
           <title>Dreamer's Church - Visit Us</title>
         </Head>
         <VideoBanner
-          video="https://prismic-io.s3.amazonaws.com/dreamers%2F1fede394-ee7e-4c86-b37c-aab2e9168a2e_header-achurchforthejourney.mp4"
+          video={this.props.commonData.data.banner_video.url}
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
             <PageTitle>Visit Us</PageTitle>
@@ -45,7 +52,7 @@ export default class extends React.Component {
         <Container>
           <Section>
             <h3>Time</h3>
-            <p>Services are Sundays at 4:30pm. Prayer starts at 4pm.</p>
+            {RichText.render(this.props.pageProps.document.data.time)}
           </Section>
           
           <Section>

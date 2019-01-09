@@ -4,7 +4,7 @@ import Router from 'next/router'
 import styled from 'styled-components';
 import Sidebar from 'react-sidebar';
 import GlobalStyles from '../globalStyles';
-import { getCommonData } from '../services/prismic';
+import { getPageData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
 import CopyrightFooter from '../blocks/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
@@ -49,7 +49,7 @@ export default class MyApp extends App {
     }
 
     const commonData = await Promise.all([
-      getCommonData(),
+      getPageData('common'),
       getLiveInfo()
     ]).then(([commonCmsData, churchOnlineInfo]) => {
       return {
@@ -137,7 +137,9 @@ export default class MyApp extends App {
           <div>
             <LiveBanner
               isLive={this.props.commonData.isLive}
-              serviceDate={this.props.commonData.eventStartTime} />
+              serviceDate={this.props.commonData.eventStartTime}
+              countdownText={this.props.commonData.data.live_banner_countdown_text}
+              liveText={this.props.commonData.data.live_banner_watch_now_text}/>
             <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
             <AppAd document={this.props.commonData} />
             <NavContainer>
