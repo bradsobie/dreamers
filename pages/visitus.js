@@ -28,13 +28,13 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>Dreamer's Church - What To Expect</title>
+          <title>Dreamer's Church - Visit Us</title>
         </Head>
         <VideoBanner
           video="https://prismic-io.s3.amazonaws.com/dreamers%2F1fede394-ee7e-4c86-b37c-aab2e9168a2e_header-achurchforthejourney.mp4"
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-            <PageTitle>What To Expect</PageTitle>
+            <PageTitle>Visit Us</PageTitle>
           </Flex>
         </VideoBanner>
 
