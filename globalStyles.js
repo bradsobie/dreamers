@@ -20,6 +20,14 @@ const GlobalStyle = createGlobalStyle`
   p, li {
     line-height: 1.7;
   }
+
+  p a {
+    color: #be000e;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export default GlobalStyle;
