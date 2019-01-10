@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
-import { getPageData } from '../services/prismic';
+import { getPageData, linkResolver } from '../services/prismic';
 
 const Container = styled.div`
   max-width: 700px;
@@ -59,7 +59,7 @@ export default class extends React.Component {
           </Section>
           
           <Section>
-            {RichText.render(this.props.pageProps.document.data.what_to_expect)}
+            {RichText.render(this.props.pageProps.document.data.what_to_expect, linkResolver)}
           </Section>
         </Container>
       </div>
