@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router'
 import styled from 'styled-components';
 import Sidebar from 'react-sidebar';
+import withAnalytics from 'next-analytics';
 import GlobalStyles from '../globalStyles';
 import { getPageData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
@@ -12,13 +13,14 @@ import LiveBanner from '../components/LiveBanner';
 import Navigation from '../blocks/Navigation';
 import MenuContent from '../components/MenuContent';
 import AppAd from '../blocks/AppAd';
-import { initializeGA, logPageView } from '../services/analytics';
 import {
   CHURCH_NAME,
   SITE_URL,
   META_DESCRIPTION,
   META_KEYWORDS,
-  OG_IMAGE
+  OG_IMAGE,
+  GA_ID,
+  FB_PIXEL_ID
 } from '../constants';
 
 const NavContainer = styled.div`
@@ -30,7 +32,7 @@ const NavContainer = styled.div`
   }
 `;
 
-export default class MyApp extends App {
+class MyApp extends App {
   constructor(props) {
     super(props);
     this.state = { isMenuOpen: false };
@@ -69,15 +71,12 @@ export default class MyApp extends App {
   }
 
   handleRouteChangeEnd() {
-    logPageView();
     document.getElementById('sidebar-scroll-container').scrollTop = 0;
   }
 
   componentDidMount() {
     Router.events.on('routeChangeStart', this.handleRouteChange);
     Router.events.on('routeChangeComplete', this.handleRouteChangeEnd);
-    initializeGA();
-    logPageView();
   }
 
   componentWillUnmount() {
@@ -153,3 +152,5 @@ export default class MyApp extends App {
     );
   }
 };
+
+export default withAnalytics(Router, { ga: GA_ID, fbq: FB_PIXEL_ID })(MyApp);

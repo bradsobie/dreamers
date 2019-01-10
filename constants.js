@@ -13,3 +13,4 @@ export const META_DESCRIPTION = 'Join us this Sunday @ 4:30PM for Church! Our am
 export const META_KEYWORDS = `Dreamer's Church,Church,Austin,TX,God`;
 export const OG_IMAGE = '/static/og.png';
 export const GA_ID = 'UA-126156826-1';
+export const FB_PIXEL_ID = '724256077666740';
