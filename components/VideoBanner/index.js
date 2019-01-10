@@ -71,7 +71,7 @@ const Arrows = styled.img.attrs({
 
 export default ({ children, video, onOpenMenuClicked, containerHeight, mobileContainerHeight }) => (
   <Container containerHeight={containerHeight} mobileContainerHeight={mobileContainerHeight}>
-    <Video autoPlay loop muted preload="true">
+    <Video playsinline autoPlay loop muted preload="true">
       <source src={video} type="video/mp4" />
     </Video>
 
