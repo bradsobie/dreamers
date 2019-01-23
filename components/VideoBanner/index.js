@@ -18,6 +18,7 @@ const Container = styled.div`
   height: ${props => props.containerHeight || '300px'};
   position: relative;
   overflow: hidden;
+  background-color: rgb(33, 33, 33);
 
   @media (max-width: 960px) {
     height: ${props => props.mobileContainerHeight || '250px'};
