@@ -3,5 +3,5 @@
   "builds": [
     { "src": "package.json", "use": "@now/next" }
   ],
-  "alias": ["dreamers", "dreamers.church", "www.dreamers.church"]
+  "alias": ["dreamers"]
 }
