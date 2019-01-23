@@ -17,7 +17,7 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>Dreamer's Church - Next Steps</title>
+          <title>Next Steps - Dreamer's Church</title>
         </Head>
         <VideoBanner
           video={this.props.commonData.data.banner_video.url}
