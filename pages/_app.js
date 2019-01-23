@@ -107,7 +107,6 @@ class MyApp extends App {
       <Container>
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta name="robots" content="noindex" />
           <meta property="og:title" content={CHURCH_NAME} />
           <meta property="og:type" content="article" />
           <meta property="og:url" content={SITE_URL} />
