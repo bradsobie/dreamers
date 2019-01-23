@@ -112,7 +112,7 @@ class MyApp extends App {
           <meta property="og:url" content={SITE_URL} />
           <meta property="og:site_name" content={CHURCH_NAME} />
           <meta property="og:description" content={META_DESCRIPTION} />
-          {/* <meta property="og:image" content={this.props.commonData.data.open_graph_image.url} /> */}
+          <meta property="og:image" content="http://dreamers.cdn.prismic.io/dreamers%2F00f06db2-15c9-4ba4-9941-bede91d98a6e_og.png" />
           <meta property="og:image:secure_url" content={this.props.commonData.data.open_graph_image.url} />
           <meta name="description" content={META_DESCRIPTION} />
           <meta name="keywords" content={META_KEYWORDS} />
