@@ -3,7 +3,8 @@ export const NAVIGATION = [
   { text: 'Sermons', url: '/sermons' },
   { text: 'Visit Us', url: '/visit' },
   { text: 'Next Steps', url: '/nextsteps' },
-  { text: 'Giving', url: '/giving' }
+  { text: 'Giving', url: '/giving' },
+  { text: 'Conference', url: '/conference' }
 ];
 
 export const WATCH_NOW_LINK = 'https://dreamers-atx.churchonline.org';
