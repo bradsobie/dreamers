@@ -24,7 +24,7 @@ const Info = styled.div`
 `;
 
 export default ({ document }) => (
-  <Container justifyContent="center" alignItems="center" flexDirection="column" p={3}>
+  <Container justifyContent="center" alignItems="center" flexDirection="column" p={3} pb={[5, 3]}>
     <Info>
       <Link href="https://goo.gl/maps/U1Jho3buttk" target="_blank">3901 Speedway, Austin, TX 78751</Link>
       <span> | </span>
