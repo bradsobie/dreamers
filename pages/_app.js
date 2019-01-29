@@ -118,6 +118,17 @@ class MyApp extends App {
           <meta name="keywords" content={META_KEYWORDS} />
           <link rel="shortcut icon" type="image/png" href={this.props.commonData.data.favicon.url} />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
+          <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5c4c54b651410568a1086918/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}} />
         </Head>
         <GlobalStyles />
 
