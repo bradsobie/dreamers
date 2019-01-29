@@ -1,20 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import Head from 'next/head';
-import Link from 'next/link';
-import { Flex } from '@rebass/grid';
+import { Flex, Box } from '@rebass/grid';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
-// import YoutubePlaylist from '../components/YoutubePlaylist';
+import SermonListItem from '../components/SermonListItem';
 import { getVideos } from '../services/youtube';
 
-// const YOUTUBE_CHANNEL_ID = 'UUAN8hiFKUYfvBWONFKzRHCw';
+const Container = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+`;
 
 export default class extends React.Component {
   static async getInitialProps() {
     return getVideos()
     .then((videos) => {
-      console.log(videos);
       return {
         videos
       };
@@ -35,18 +38,17 @@ export default class extends React.Component {
             <PageTitle>Sermons</PageTitle>
           </Flex>
         </VideoBanner>
-        {/* <YoutubePlaylist playlistId={YOUTUBE_CHANNEL_ID} /> */}
-
-        {this.props.pageProps.videos &&
-          this.props.pageProps.videos.map(video =>
-            <Link
-              key={video.snippet.resourceId.videoId}
-              as={`/sermon/${video.snippet.resourceId.videoId}`}
-              href={`/sermon?id=${video.snippet.resourceId.videoId}&title=${video.snippet.title}`}>
-              <a>{video.snippet.title}</a>
-            </Link>
-          )
-        }
+        <Container>
+          <Flex flexWrap="wrap">
+            {this.props.pageProps.videos &&
+              this.props.pageProps.videos.map(video =>
+                <Box m={3} width={[ 1, 'calc(50% - 32px)' ]} key={video.snippet.resourceId.videoId}>
+                  <SermonListItem video={video} />
+                </Box>
+              )
+            }
+          </Flex>
+        </Container>
       </div>
     )
   }
