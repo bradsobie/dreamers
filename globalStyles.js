@@ -21,11 +21,13 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7;
   }
 
-  p a {
-    color: #be000e;
+  p, h1, h2, h3, h4, h5, h6 {
+    a {
+      color: #be000e;
 
-    &:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;
