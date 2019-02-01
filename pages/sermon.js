@@ -15,7 +15,17 @@ const Container = styled.div`
   padding: 16px;
 `;
 
+const MOBILE_PLAYER_HEIGHT = '250';
+const DESKTOP_PLAYER_HEIGHT = '360';
+
 export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoPlayerHeight: DESKTOP_PLAYER_HEIGHT
+    };
+  }
+
   static async getInitialProps({ query }) {
     return getVideos()
       .then((videos) => {
@@ -23,6 +33,12 @@ export default class extends React.Component {
           video: videos.find(video => video.snippet.resourceId.videoId === query.id)
         };
       });
+  }
+
+  componentDidMount() {
+    this.setState({
+      videoPlayerHeight: window.innerWidth > 600 ? DESKTOP_PLAYER_HEIGHT : MOBILE_PLAYER_HEIGHT
+    });
   }
 
   render() {
@@ -42,9 +58,9 @@ export default class extends React.Component {
           <iframe
             type="text/html"
             width="100%"
-            height="360"
+            height={this.state.videoPlayerHeight}
             src={`https://www.youtube.com/embed/${this.props.pageProps.video.snippet.resourceId.videoId}?autoplay=1`}
-            frameborder="0">
+            frameBorder="0">
           </iframe>
           <p>{this.props.pageProps.video.snippet.description}</p>
           <div style={{'textAlign': 'center'}}>
