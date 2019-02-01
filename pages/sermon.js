@@ -1,9 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 
 import PageTitle from '../components/PageTitle';
+import Button from '../components/Button';
 import VideoBanner from '../components/VideoBanner';
 import { getVideos } from '../services/youtube';
 
@@ -15,18 +17,12 @@ const Container = styled.div`
 
 export default class extends React.Component {
   static async getInitialProps({ query }) {
-    console.log('getInitialProps', query);
     return getVideos()
       .then((videos) => {
-        console.log(videos);
         return {
           video: videos.find(video => video.snippet.resourceId.videoId === query.id)
         };
       });
-  }
-
-  componentDidMount() {
-    console.log(this.props);
   }
 
   render() {
@@ -51,6 +47,11 @@ export default class extends React.Component {
             frameborder="0">
           </iframe>
           <p>{this.props.pageProps.video.snippet.description}</p>
+          <div style={{'textAlign': 'center'}}>
+            <Link href="/sermons">
+              <Button theme="dark" onClick={this.onLoadMoreClicked}>View all sermons</Button>
+            </Link>
+          </div>
         </Container>
       </div>
     )

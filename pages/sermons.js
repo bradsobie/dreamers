@@ -6,6 +6,7 @@ import { Flex, Box } from '@rebass/grid';
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
 import SermonListItem from '../components/SermonListItem';
+import Button from '../components/Button';
 import { getVideos } from '../services/youtube';
 
 const Container = styled.div`
@@ -15,6 +16,15 @@ const Container = styled.div`
 `;
 
 export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onLoadMoreClicked = this.onLoadMoreClicked.bind(this);
+    this.state = {
+      visibleVideos: [],
+      nextVideoIndex: 0
+    };
+  }
+
   static async getInitialProps() {
     return getVideos()
     .then((videos) => {
@@ -24,8 +34,25 @@ export default class extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.loadMoreVideos();
+  }
+
+  onLoadMoreClicked() {
+    this.loadMoreVideos();
+  }
+
+  loadMoreVideos() {
+    this.setState({
+      visibleVideos: [
+        ...this.state.visibleVideos,
+        ...this.props.pageProps.videos.slice(this.state.nextVideoIndex, this.state.nextVideoIndex + 4)
+      ],
+      nextVideoIndex: this.state.nextVideoIndex + 4
+    });
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div>
         <Head>
@@ -39,15 +66,19 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
         <Container>
-          <Flex flexWrap="wrap">
-            {this.props.pageProps.videos &&
-              this.props.pageProps.videos.map(video =>
+          <Flex flexWrap="wrap" m={'-16px'} mb={4}>
+            {this.state.visibleVideos &&
+              this.state.visibleVideos.map(video =>
                 <Box m={3} width={[ 1, 'calc(50% - 32px)' ]} key={video.snippet.resourceId.videoId}>
                   <SermonListItem video={video} />
                 </Box>
               )
             }
           </Flex>
+          <div style={{'textAlign': 'center'}}>
+            {this.state.visibleVideos.length < this.props.pageProps.videos.length &&
+              <Button theme="dark" onClick={this.onLoadMoreClicked}>Load more</Button>}
+          </div>
         </Container>
       </div>
     )

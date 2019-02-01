@@ -65,12 +65,17 @@ export default class extends React.Component {
   }
 
   render() {
+    const {
+      latestVideo,
+      document
+    } = this.props.pageProps;
+
     return (
       <div>
         <Head>
           <title>Dreamer's Church</title>
         </Head>
-        {this.props.pageProps.document &&
+        {document &&
           <VideoBanner
             video={this.props.commonData.data.banner_video.url}
             onOpenMenuClicked={this.props.onOpenMenuClicked}
@@ -78,10 +83,12 @@ export default class extends React.Component {
             mobileContainerHeight="300px">
             <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
               <BannerContainer>
-                <LatestSermon>{RichText.asText(this.props.pageProps.document.data.banner_title)}</LatestSermon>
-                <SermonTitle>{this.props.pageProps.latestVideo && this.props.pageProps.latestVideo.snippet.title}</SermonTitle>
-                <Link href="/sermons">
-                  <WatchNowButton>{RichText.asText(this.props.pageProps.document.data.banner_cta_text)}</WatchNowButton>
+                <LatestSermon>{RichText.asText(document.data.banner_title)}</LatestSermon>
+                <SermonTitle>{latestVideo && latestVideo.snippet.title}</SermonTitle>
+                <Link
+                  as={`/sermon/${latestVideo.snippet.resourceId.videoId}`}
+                  href={`/sermon?id=${latestVideo.snippet.resourceId.videoId}&title=${latestVideo.snippet.title}`}>
+                  <WatchNowButton>{RichText.asText(document.data.banner_cta_text)}</WatchNowButton>
                 </Link>
                 <div>
                   <ArrowImage height="12px" src="/static/arrow.svg" />
