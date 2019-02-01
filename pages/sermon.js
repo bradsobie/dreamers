@@ -15,6 +15,12 @@ const Container = styled.div`
   padding: 16px;
 `;
 
+const SermonTitle = styled(PageTitle)`
+  @media (max-width: 600px) {
+    font-size: 24px;
+  }
+`;
+
 const MOBILE_PLAYER_HEIGHT = '250';
 const DESKTOP_PLAYER_HEIGHT = '360';
 
@@ -51,7 +57,7 @@ export default class extends React.Component {
           video={this.props.commonData.data.banner_video.url}
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-            <PageTitle>{this.props.pageProps.video.snippet.title}</PageTitle>
+            <SermonTitle>{this.props.pageProps.video.snippet.title}</SermonTitle>
           </Flex>
         </VideoBanner>
         <Container>
