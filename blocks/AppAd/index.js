@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Flex, Box } from '@rebass/grid';
 import { RichText } from 'prismic-reactjs';
+import Link from 'next/link';
 
+import Button from '../../components/Button';
 import GooglePlayBadge from '../../components/GooglePlayBadge';
 import AppStoreBadge from '../../components/AppStoreBadge';
 
@@ -33,7 +35,7 @@ const AppImage = styled.img`
   }
 `;
 
-export default ({ document }) => (
+export default ({ document, showBadges }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
       <AppImage src={document.data.app_image.url} />
@@ -41,10 +43,16 @@ export default ({ document }) => (
     <Box order={[1, 2]}>
       <Headline>{RichText.asText(document.data.app_headline)}</Headline>
       <Paragraph>{RichText.asText(document.data.app_description)}</Paragraph>
-      <div>
-        <GooglePlayBadge />
-        <AppStoreBadge />
-      </div>
+      {showBadges ? (
+        <div>
+          <GooglePlayBadge />
+          <AppStoreBadge />
+        </div>
+      ) : (
+        <Link href="/app">
+          <Button theme="dark">Get the app</Button>
+        </Link>
+      )}
     </Box>
   </Container> 
 );
