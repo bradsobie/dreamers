@@ -35,6 +35,12 @@ const AppImage = styled.img`
   }
 `;
 
+const GetTheAppButton = styled(Button)`
+  @media (max-width: 640px) {
+    margin-bottom: 16px;
+  }
+`;
+
 export default ({ document, showBadges }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
@@ -50,7 +56,7 @@ export default ({ document, showBadges }) => (
         </div>
       ) : (
         <Link href="/app">
-          <Button theme="dark">Get the app</Button>
+          <GetTheAppButton theme="dark">Get the app</GetTheAppButton>
         </Link>
       )}
     </Box>
