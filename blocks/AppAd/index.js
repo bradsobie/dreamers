@@ -20,6 +20,7 @@ const Container = styled(Flex)`
 const Headline = styled.h2`
   font-weight: 400;
   font-size: 30px;
+  margin-top: 0;
 `;
 
 const Paragraph = styled.p`
