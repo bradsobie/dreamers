@@ -13,22 +13,43 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  * {
-    box-sizing: inherit;
-  }
-
-  p, li {
-    line-height: 1.7;
-  }
-
-  p, h1, h2, h3, h4, h5, h6 {
-    a {
-      color: #be000e;
-
-      &:hover {
-        text-decoration: underline;
+  .prismic-content {
+    h6 {
+      margin: 0;
+      a {
+        background-color: #333;
+        font-size: 16px;
+        color: #fff;
+        appearance: none;
+        padding: 16px 24px;
+        outline: none;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        display: inline-block;
+        cursor: pointer;
+        font-family: 'Montserrat',sans-serif;
       }
     }
+
+    p, li {
+      line-height: 1.7;
+    }
+  
+    p, h1, h2, h3, h4, h5 {
+      a {
+        color: #be000e;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  * {
+    box-sizing: inherit;
   }
 `;
 

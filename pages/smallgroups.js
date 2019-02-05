@@ -6,7 +6,6 @@ import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
-import Button from '../components/Button';
 import { getPageData } from '../services/prismic';
 
 const Container = styled.div`
@@ -33,15 +32,8 @@ export default class extends React.Component {
             <PageTitle>Small Groups</PageTitle>
           </Flex>
         </VideoBanner>
-
-        <Container>
-          <p>{RichText.render(this.props.pageProps.document.data.content)}</p>
-          <Button
-            theme="dark"
-            target="_blank"
-            href="https://dreamerschurch.churchcenter.com/groups/small-groups">
-            {RichText.asText(this.props.pageProps.document.data.button_text)}
-          </Button>
+        <Container className="prismic-content">
+          {RichText.render(this.props.pageProps.document.data.content)}
         </Container>
       </div>
     )
