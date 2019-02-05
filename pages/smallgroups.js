@@ -2,41 +2,25 @@ import React from 'react';
 import Head from 'next/head';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
+import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
+import Button from '../components/Button';
+import { getPageData } from '../services/prismic';
 
+const Container = styled.div`
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+`;
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { windowWidth: 0 };
-    this.updateWindowWidth = this.updateWindowWidth.bind(this);
-  }
-
-  componentDidMount() {
-    this.updateWindowWidth();
-    window.addEventListener('resize', this.updateWindowWidth);
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowWidth);
-  }
-  
-  updateWindowWidth() {
-    this.setState({ windowWidth: window.innerWidth });
+  static async getInitialProps() {
+    return getPageData('smallgroups')
+      .then(document => ({ document }));
   }
 
   render() {
-    let iframeHeight;
-
-    if (this.state.windowWidth < 600) {
-      iframeHeight = '3200px';
-    } else if (this.state.windowWidth >= 600 && this.state.windowWidth <= 960) {
-      iframeHeight = '1900px';
-    } else if (this.state.windowWidth > 960) {
-      iframeHeight = '1500px';
-    }
-
     return (
       <div>
         <Head>
@@ -50,12 +34,15 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
 
-        <iframe
-          src="https://dreamerschurch.churchcenter.com/groups/small-groups"
-          frameBorder="0"
-          width="100%"
-          height={iframeHeight}
-        />
+        <Container>
+          <p>{RichText.render(this.props.pageProps.document.data.content)}</p>
+          <Button
+            theme="dark"
+            target="_blank"
+            href="https://dreamerschurch.churchcenter.com/groups/small-groups">
+            {RichText.asText(this.props.pageProps.document.data.button_text)}
+          </Button>
+        </Container>
       </div>
     )
   }
