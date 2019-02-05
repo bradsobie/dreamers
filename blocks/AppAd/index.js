@@ -56,9 +56,11 @@ export default ({ document, showBadges }) => (
           <AppStoreBadge />
         </div>
       ) : (
-        <Link href="/app">
-          <GetTheAppButton theme="dark">Get the app</GetTheAppButton>
-        </Link>
+        <Flex justifyContent={['center', 'start']}>
+          <Link href="/app">
+            <GetTheAppButton theme="dark">Get the app</GetTheAppButton>
+          </Link>
+        </Flex>
       )}
     </Box>
   </Container> 
