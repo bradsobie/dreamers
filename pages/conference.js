@@ -37,8 +37,7 @@ export default class extends React.Component {
             <PageTitle>Conference</PageTitle>
           </Flex>
         </VideoBanner>
-
-        <Container>
+        <Container className="prismic-content">
           {RichText.render(this.props.pageProps.document.data.content)}
         </Container>
       </div>

@@ -35,7 +35,7 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
 
-        <Container>
+        <Container className="prismic-content">
           {RichText.render(this.props.pageProps.document.data.content)}
         </Container>
       </div>
