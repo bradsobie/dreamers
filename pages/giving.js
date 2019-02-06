@@ -41,12 +41,12 @@ export default class extends React.Component {
           <Flex justifyContent="center" alignItems="center" flexDirection="column" css={{ height: '100%' }}>
             <GiveTitle>{RichText.asText(this.props.pageProps.document.data.banner_title)}</GiveTitle>
             <Button href="https://app.customgiving.com/give/dreamerschurch" target="_blank">
-              {RichText.asText(this.props.pageProps.document.data.give_button)}
+              Give now
             </Button>
           </Flex>
         </VideoBanner>
 
-        <Container class="prismic-content">
+        <Container className="prismic-content">
           {RichText.render(this.props.pageProps.document.data.content)}
         </Container>
       </div>
