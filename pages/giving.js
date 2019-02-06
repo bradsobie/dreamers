@@ -46,11 +46,8 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
 
-        <Container>
+        <Container class="prismic-content">
           {RichText.render(this.props.pageProps.document.data.content)}
-          <Button theme="dark" href="https://app.customgiving.com/give/dreamerschurch" target="_blank">
-            {RichText.asText(this.props.pageProps.document.data.give_button)}
-          </Button>
         </Container>
       </div>
     )
