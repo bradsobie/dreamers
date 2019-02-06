@@ -91,7 +91,11 @@ export default ({ children, video, onOpenMenuClicked, containerHeight, mobileCon
           ) : (
             <Fragment>
               <Navigation />
-              <div style={{ width: '231px' }} />
+              <Flex width="231px" justifyContent="flex-end">
+                <Button onClick={() => onOpenMenuClicked(true)}>
+                  <FontAwesomeIcon icon={faBars} size="2x" />
+                </Button>
+              </Flex>
             </Fragment>
           )
         }
