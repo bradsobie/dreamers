@@ -32,10 +32,6 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat',sans-serif;
       }
     }
-
-    p, li {
-      line-height: 1.7;
-    }
   
     p, h1, h2, h3, h4, h5 {
       a {
@@ -46,6 +42,10 @@ const GlobalStyle = createGlobalStyle`
         }
       }
     }
+  }
+
+  p, li {
+    line-height: 1.7;
   }
 
   * {
