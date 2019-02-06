@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { Flex } from '@rebass/grid';
-import { NAVIGATION } from '../../constants';
+import { PAGES } from '../../constants';
 
 const Container = styled.div`
   padding: 16px;
@@ -33,7 +33,7 @@ export default ({ onCloseMenuClicked }) => (
     </Flex>
 
     <LinkContainer>
-      {NAVIGATION.map(({ text, url }, index) => (
+      {PAGES.map(({ text, url }, index) => (
         <Link href={url} key={index}>
           <a>{text}</a>
         </Link>

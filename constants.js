@@ -1,10 +1,20 @@
-export const NAVIGATION = [
-  { text: 'About', url: '/about' },
-  { text: 'Sermons', url: '/sermons' },
-  { text: 'Visit Us', url: '/visit' },
-  { text: 'Next Steps', url: '/nextsteps' },
-  { text: 'Giving', url: '/giving' },
-  { text: 'Conference', url: '/conference' }
+export const PAGES = [
+  { text: 'About', url: '/about', id: 'about' },
+  { text: 'Sermons', url: '/sermons', id: 'sermons' },
+  { text: 'Visit Us', url: '/visit', id: 'visit' },
+  { text: 'Next Steps', url: '/nextsteps', id: 'nextsteps' },
+  { text: 'Giving', url: '/giving', id: 'giving' },
+  { text: 'Small Groups', url: '/smallgroups', id: 'smallgroups' },
+  { text: 'Conference', url: '/conference', id: 'conference' }
+];
+
+export const HORIZONTAL_NAVIGATION = [
+  'about',
+  'sermons',
+  'visit',
+  'smallgroups',
+  'giving',
+  'conference'
 ];
 
 export const WATCH_NOW_LINK = 'https://dreamers-atx.churchonline.org';
