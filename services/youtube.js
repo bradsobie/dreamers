@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = 'AIzaSyBpV5_UnkH14X7_RXSde0DEMPLSi9p0HIM';
-const PLAYLIST_ID = 'UUAN8hiFKUYfvBWONFKzRHCw';
+const PLAYLIST_ID = 'PLFzwoqqIX3fk5ytCmA_X15qGhTkpUqtDe';
 const API_URL = 'https://www.googleapis.com/youtube/v3';
 
 export const getVideos = () =>
