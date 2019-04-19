@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Media from 'react-media';
 import Logo from '../Logo';
-import Navigation from '../../blocks/Navigation';
+import Navigation from '../Navigation';
 import { Flex } from '@rebass/grid';
 
 const Video = styled.video`

@@ -5,6 +5,7 @@
   ],
   "alias": ["dreamers"],
   "routes": [
-    { "src": "/sermon/(?<id>[^/]*)", "dest": "/sermon?id=$id" }
+    { "src": "/sermon/(?<id>[^/]*)", "dest": "/sermon?id=$id" },
+    { "src": "/conference", "status": 301, "headers": { "Location": "/events" }}
   ]
 }

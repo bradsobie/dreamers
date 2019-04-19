@@ -7,12 +7,12 @@ import withAnalytics from 'next-analytics';
 import GlobalStyles from '../globalStyles';
 import { getPageData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
-import CopyrightFooter from '../blocks/CopyrightFooter';
+import CopyrightFooter from '../components/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
 import LiveBanner from '../components/LiveBanner';
-import Navigation from '../blocks/Navigation';
+import Navigation from '../components/Navigation';
 import MenuContent from '../components/MenuContent';
-import AppAd from '../blocks/AppAd';
+import AppAd from '../components/AppAd';
 import {
   CHURCH_NAME,
   SITE_URL,

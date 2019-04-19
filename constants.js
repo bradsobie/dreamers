@@ -5,7 +5,7 @@ export const PAGES = [
   { text: 'Next Steps', url: '/nextsteps', id: 'nextsteps' },
   { text: 'Giving', url: '/giving', id: 'giving' },
   { text: 'Small Groups', url: '/smallgroups', id: 'smallgroups' },
-  { text: 'Conference', url: '/conference', id: 'conference' }
+  { text: 'Events', url: '/events', id: 'events' }
 ];
 
 export const HORIZONTAL_NAVIGATION = [
@@ -14,7 +14,7 @@ export const HORIZONTAL_NAVIGATION = [
   'visit',
   'smallgroups',
   'giving',
-  'conference'
+  'events'
 ];
 
 export const WATCH_NOW_LINK = 'https://dreamers-atx.churchonline.org';

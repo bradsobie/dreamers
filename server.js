@@ -15,6 +15,10 @@ app.prepare()
     app.render(req, res, actualPage, queryParams)
   })
 
+  server.get('/conference', (_req, res) => {
+    res.redirect(301, '/events')
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res)
   })
