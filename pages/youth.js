@@ -26,7 +26,7 @@ const Container = styled.div`
 
 export default class extends React.Component {
   static async getInitialProps() {
-    return getPageData('dreamkids')
+    return getPageData('youth')
       .then(document => ({ document }));
   }
 
@@ -34,14 +34,14 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>DreamKids | Dreamer's Church</title>
+          <title>Youth | Dreamer's Church</title>
           <meta name="robots" content="noindex" />
         </Head>
         <VideoBanner
           video={this.props.commonData.data.banner_video.url}
           onOpenMenuClicked={this.props.onOpenMenuClicked}>
           <Flex justifyContent="center" alignItems="center" css={{ height: '100%' }}>
-            <PageTitle>DreamKids</PageTitle>
+            <PageTitle>Youth</PageTitle>
           </Flex>
         </VideoBanner>
 
