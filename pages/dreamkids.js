@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
-import { getPageData, linkResolver } from '../services/prismic';
+import { getPageData } from '../services/prismic';
 
 const Container = styled.div`
   max-width: 700px;
