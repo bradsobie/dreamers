@@ -35,7 +35,6 @@ export default class extends React.Component {
       <div>
         <Head>
           <title>Internship | Dreamer's Church</title>
-          <meta name="robots" content="noindex" />
         </Head>
         <VideoBanner
           video={this.props.commonData.data.banner_video.url}

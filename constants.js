@@ -5,14 +5,15 @@ export const PAGES = [
   { text: 'Next Steps', url: '/nextsteps', id: 'nextsteps' },
   { text: 'Giving', url: '/giving', id: 'giving' },
   { text: 'Small Groups', url: '/smallgroups', id: 'smallgroups' },
-  { text: 'Events', url: '/events', id: 'events' }
+  { text: 'Events', url: '/events', id: 'events' },
+  { text: 'Internship', url: '/internship', id: 'internship' }
 ];
 
 export const HORIZONTAL_NAVIGATION = [
   'about',
   'sermons',
   'visit',
-  'smallgroups',
+  'internship',
   'giving',
   'events'
 ];
