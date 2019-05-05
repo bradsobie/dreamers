@@ -15,6 +15,12 @@ app.prepare()
     app.render(req, res, actualPage, queryParams)
   })
 
+  server.get('/page/:id', (req, res) => {
+    const actualPage = '/page'
+    const queryParams = { id: req.params.id } 
+    app.render(req, res, actualPage, queryParams)
+  })
+
   server.get('/conference', (_req, res) => {
     res.redirect(301, '/events')
   })
