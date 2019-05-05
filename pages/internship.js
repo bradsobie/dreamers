@@ -22,6 +22,10 @@ const Container = styled.div`
   p {
     font-size: 16px;
   }
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 export default class extends React.Component {
