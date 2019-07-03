@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Flex } from '@rebass/grid';
 import Countdown from 'react-countdown-now';
-import { WATCH_NOW_LINK } from '../../constants';
+import { WATCH_NOW_LINK, SERVICE_TIME } from '../../constants';
 
 import Button from '../Button';
 
@@ -31,10 +31,10 @@ const renderer = ({ days, hours, minutes, completed }) => {
       <WatchNowButton href={WATCH_NOW_LINK} target="_blank">Watch now</WatchNowButton>
     </Flex>
   );
-  return `Next service is Sunday at 4:30 PM. ${days}d ${hours}h ${minutes}m`;
+  return `Next service is Sunday at ${SERVICE_TIME}. ${days}d ${hours}h ${minutes}m`;
 };
 
-export default ({ isLive, serviceDate }) => (
+export default ({ serviceDate }) => (
   <Banner justifyContent="center" alignItems="center">
     <Countdown date={serviceDate} renderer={renderer} />
   </Banner>

@@ -2,6 +2,7 @@ import { RichText } from 'prismic-reactjs';
 import styled from 'styled-components';
 import { Flex } from '@rebass/grid';
 import Link from '../../components/Link';
+import { CHURCH_ADDRESS, GOOGLE_MAPS_LINK } from '../../constants';
 
 const Container = styled(Flex)`
   background-color: #333;
@@ -26,7 +27,7 @@ const Info = styled.div`
 export default ({ document }) => (
   <Container justifyContent="center" alignItems="center" flexDirection="column" p={3} pb={[5, 3]}>
     <Info>
-      <Link href="https://goo.gl/maps/U1Jho3buttk" target="_blank">3901 Speedway, Austin, TX 78751</Link>
+      <Link href={GOOGLE_MAPS_LINK} target="_blank">{CHURCH_ADDRESS}</Link>
       <span> | </span>
       <Link href={`tel:${document.data.phone_number[0].text}`}>{document.data.phone_number[0].text}</Link>
     </Info>
