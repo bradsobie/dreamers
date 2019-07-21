@@ -6,7 +6,7 @@ export const PAGES = [
   { text: 'Next Steps', href: '/page/[id]', fullUrl: '/page/nextsteps', id: 'nextsteps' },
   { text: 'Giving', fullUrl: '/giving', id: 'giving' },
   { text: 'Small Groups', href: '/page/[id]', fullUrl: '/page/smallgroups', id: 'smallgroups' },
-  { text: 'Events', href: '/page/[id]', fullUrl: '/page/events', id: 'events' },
+  { text: 'Events', fullUrl: '/events', id: 'events' },
   { text: 'Internship', href: '/page/[id]', fullUrl: '/page/internship', id: 'internship' }
 ];
 

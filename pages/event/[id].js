@@ -5,15 +5,20 @@ import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
 import Error from 'next/error';
 
-import { getPageDataById } from '../../services/prismic';
+import { getEventDataById } from '../../services/prismic';
 import PageTitle from '../../components/PageTitle';
 import VideoBanner from '../../components/VideoBanner';
 import PrismicContent from '../../components/PrismicContent';
 import ContentContainer from '../../components/ContentContainer';
 
+const EventImage = styled.img`
+  max-width: 100%;
+  margin-bottom 32px;
+`;
+
 export default class extends React.Component {
   static async getInitialProps({ query }) {
-    const document = await getPageDataById(query.id);
+    const document = await getEventDataById(query.id);
     return {
       document,
       errorCode: document ? null : 404
@@ -38,6 +43,10 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
         <ContentContainer>
+          {this.props.pageProps.document.data.image
+            && this.props.pageProps.document.data.image.url
+            && <img src={this.props.pageProps.document.data.image.url} style={{ maxWidth: '100%' }} />
+          }
           <PrismicContent content={this.props.pageProps.document.data.content} />
         </ContentContainer>
       </>

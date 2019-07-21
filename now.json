@@ -5,7 +5,6 @@
     { "src": "static/sitemap.xml", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "/events", "status": 301, "headers": { "Location": "/page/events" } },
     { "src": "/about", "status": 301, "headers": { "Location": "/page/about" } },
     { "src": "/internship", "status": 301, "headers": { "Location": "/page/internship" } },
     { "src": "/nextsteps", "status": 301, "headers": { "Location": "/page/nextsteps" } },
