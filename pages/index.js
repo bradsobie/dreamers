@@ -73,7 +73,7 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>Dreamer's Church</title>
+          <title>Dreamer's Church, Austin, TX | God has created us to dream</title>
         </Head>
         {document &&
           <VideoBanner

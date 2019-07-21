@@ -53,7 +53,7 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>{RichText.asText(this.props.pageProps.document.data.title)} | Dreamer's Church</title>
+          <title>{RichText.asText(this.props.pageProps.document.data.title)} | Dreamer's Church, Austin, TX</title>
         </Head>
         <VideoBanner
           video={this.props.commonData.data.banner_video.url}
