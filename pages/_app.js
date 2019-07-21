@@ -130,6 +130,12 @@ class MyApp extends App {
             s0.parentNode.insertBefore(s1,s0);
             })();
           `}} />
+          <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+            window.prismic = {
+              endpoint: 'https://dreamers.cdn.prismic.io/api/v2'
+            };
+          `}} />
+          <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js"></script>
         </Head>
         <GlobalStyles />
 
