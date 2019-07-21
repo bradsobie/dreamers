@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
 import Error from 'next/error';
 
-import { getPageDataById } from '../services/prismic';
-import PageTitle from '../components/PageTitle';
-import VideoBanner from '../components/VideoBanner';
+import { getPageDataById } from '../../services/prismic';
+import PageTitle from '../../components/PageTitle';
+import VideoBanner from '../../components/VideoBanner';
 
 const Container = styled.div`
   max-width: 700px;
