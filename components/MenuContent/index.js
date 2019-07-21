@@ -33,8 +33,8 @@ export default ({ onCloseMenuClicked }) => (
     </Flex>
 
     <LinkContainer>
-      {PAGES.map(({ text, url }, index) => (
-        <Link href={url} key={index}>
+      {PAGES.map(({ text, fullUrl, href }, index) => (
+        <Link href={href || fullUrl} key={index}>
           <a>{text}</a>
         </Link>
       ))}
