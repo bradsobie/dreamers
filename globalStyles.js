@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
         display: inline-block;
         cursor: pointer;
         font-family: 'Montserrat',sans-serif;
+        transition: background-color 0.15s;
+
+        &:hover {
+          background-color: #585858;
+        }
       }
     }
   

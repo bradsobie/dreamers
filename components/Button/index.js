@@ -13,4 +13,9 @@ export default styled.a`
   font-weight: 600;
   display: inline-block;
   cursor: pointer;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: ${props => props.theme === 'dark' ? '#585858': '#fdfdfd'};
+  }
 `;

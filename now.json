@@ -10,6 +10,7 @@
     { "src": "/internship", "status": 301, "headers": { "Location": "/page/internship" } },
     { "src": "/nextsteps", "status": 301, "headers": { "Location": "/page/nextsteps" } },
     { "src": "/smallgroups", "status": 301, "headers": { "Location": "/page/smallgroups" } },
+    { "src": "/app", "status": 301, "headers": { "Location": "/page/app" } },
     { "src": "/sitemap.xml", "dest": "/static/sitemap.xml" }
   ]
 }
