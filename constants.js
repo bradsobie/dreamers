@@ -1,12 +1,12 @@
 export const PAGES = [
-  { text: 'About', url: '/about', id: 'about' },
+  { text: 'About', url: '/page/about', id: 'about' },
   { text: 'Sermons', url: '/sermons', id: 'sermons' },
   { text: 'Visit Us', url: '/visit', id: 'visit' },
-  { text: 'Next Steps', url: '/nextsteps', id: 'nextsteps' },
+  { text: 'Next Steps', url: '/page/nextsteps', id: 'nextsteps' },
   { text: 'Giving', url: '/giving', id: 'giving' },
-  { text: 'Small Groups', url: '/smallgroups', id: 'smallgroups' },
-  { text: 'Events', url: '/events', id: 'events' },
-  { text: 'Internship', url: '/internship', id: 'internship' }
+  { text: 'Small Groups', url: '/page/smallgroups', id: 'smallgroups' },
+  { text: 'Events', url: '/page/events', id: 'events' },
+  { text: 'Internship', url: '/page/internship', id: 'internship' }
 ];
 
 export const HORIZONTAL_NAVIGATION = [

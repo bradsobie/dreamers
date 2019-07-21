@@ -28,6 +28,10 @@ const Container = styled.div`
     margin: 16px 0;
     padding-left: 8px;
   }
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 export default class extends React.Component {

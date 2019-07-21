@@ -3,5 +3,12 @@
   "builds": [
     { "src": "package.json", "use": "@now/next" }
   ],
-  "alias": ["dreamers"]
+  "alias": ["dreamers"],
+  "routes": [
+    { "src": "/events", "status": 301, "headers": { "Location": "/page/events" } },
+    { "src": "/about", "status": 301, "headers": { "Location": "/page/about" } },
+    { "src": "/internship", "status": 301, "headers": { "Location": "/page/internship" } },
+    { "src": "/nextsteps", "status": 301, "headers": { "Location": "/page/nextsteps" } },
+    { "src": "/smallgroups", "status": 301, "headers": { "Location": "/page/smallgroups" } }
+  ]
 }
