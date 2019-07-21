@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { Flex } from '@rebass/grid';
-import { PAGES } from '../../constants';
+import { PAGES, VERTICAL_NAVIGATION } from '../../constants';
 
 const Container = styled.div`
   padding: 16px;
@@ -24,6 +24,8 @@ const CloseButton = styled.button`
   appearance: none;
 `;
 
+const navigationPages = VERTICAL_NAVIGATION.map(item => PAGES.find(page => page.id === item));
+
 export default ({ onCloseMenuClicked }) => (
   <Container>
     <Flex justifyContent="flex-end">
@@ -33,7 +35,7 @@ export default ({ onCloseMenuClicked }) => (
     </Flex>
 
     <LinkContainer>
-      {PAGES.map(({ text, fullUrl, href }, index) => (
+      {navigationPages.map(({ text, fullUrl, href }, index) => (
         <Link href={href || fullUrl} as={fullUrl} key={index}>
           <a>{text}</a>
         </Link>

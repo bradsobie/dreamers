@@ -1,5 +1,6 @@
 export const PAGES = [
   { text: 'About', href: '/page/[id]', fullUrl: '/page/about', id: 'about' },
+  { text: 'App', href: '/page/[id]', fullUrl: '/page/app', id: 'app' },
   { text: 'Sermons', fullUrl: '/sermons', id: 'sermons' },
   { text: 'Visit Us', fullUrl: '/visit', id: 'visit' },
   { text: 'Next Steps', href: '/page/[id]', fullUrl: '/page/nextsteps', id: 'nextsteps' },
@@ -16,6 +17,17 @@ export const HORIZONTAL_NAVIGATION = [
   'internship',
   'giving',
   'events'
+];
+
+export const VERTICAL_NAVIGATION = [
+  'about',
+  'sermons',
+  'visit',
+  'nextsteps',
+  'giving',
+  'smallgroups',
+  'events',
+  'internship'
 ];
 
 export const WATCH_NOW_LINK = 'https://dreamers-atx.churchonline.org';

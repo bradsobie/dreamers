@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Button from '../../components/Button';
 import GooglePlayBadge from '../../components/GooglePlayBadge';
 import AppStoreBadge from '../../components/AppStoreBadge';
+import { PAGES } from '../../constants';
 
 const Container = styled(Flex)`
   max-width: 800px;
@@ -42,6 +43,8 @@ const GetTheAppButton = styled(Button)`
   }
 `;
 
+const appPage = PAGES.find(page => page.id === 'app');
+
 export default ({ document, showBadges }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
     <Box order={[2, 1]}>
@@ -57,7 +60,7 @@ export default ({ document, showBadges }) => (
         </div>
       ) : (
         <Flex justifyContent={['center', 'start']}>
-          <Link href="/app">
+          <Link href={appPage.href} as={appPage.fullUrl}>
             <GetTheAppButton theme="dark">Get the app</GetTheAppButton>
           </Link>
         </Flex>

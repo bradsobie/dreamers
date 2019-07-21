@@ -158,7 +158,7 @@ class MyApp extends App {
               countdownText={this.props.commonData.data.live_banner_countdown_text}
               liveText={this.props.commonData.data.live_banner_watch_now_text}/>
             <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
-            <AppAd document={this.props.commonData} showBadges={this.props.router.pathname === '/app'} />
+            <AppAd document={this.props.commonData} showBadges={this.props.router.asPath === '/page/app'} />
             <NavContainer>
               <Navigation flexWrap="wrap" />
             </NavContainer>
