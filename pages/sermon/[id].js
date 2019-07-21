@@ -49,7 +49,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Head>
           <title>{this.props.pageProps.video.snippet.title} | Dreamer's Church, Austin, TX</title>
         </Head>
@@ -75,7 +75,7 @@ export default class extends React.Component {
             </Link>
           </div>
         </Container>
-      </div>
+      </>
     )
   }
 }

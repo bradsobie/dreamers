@@ -8,8 +8,8 @@ import Error from 'next/error';
 import { getPageDataById } from '../../services/prismic';
 import PageTitle from '../../components/PageTitle';
 import VideoBanner from '../../components/VideoBanner';
-import ContentContainer from '../../components/ContentContainer';
 import PrismicContent from '../../components/PrismicContent';
+import ContentContainer from '../../components/ContentContainer';
 
 export default class extends React.Component {
   static async getInitialProps({ query }) {

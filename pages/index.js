@@ -71,7 +71,7 @@ export default class extends React.Component {
     } = this.props.pageProps;
 
     return (
-      <div>
+      <>
         <Head>
           <title>Dreamer's Church, Austin, TX | God has created us to dream</title>
         </Head>
@@ -97,7 +97,7 @@ export default class extends React.Component {
             </Flex>
           </VideoBanner>
         }
-      </div>
+      </>
     )
   }
 }

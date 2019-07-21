@@ -7,13 +7,9 @@ import { RichText } from 'prismic-reactjs';
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
 import Button from '../components/Button';
+import PrismicContent from '../components/PrismicContent';
+import ContentContainer from '../components/ContentContainer';
 import { getPageData } from '../services/prismic';
-
-const Container = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 16px;
-`;
 
 const GiveTitle = styled(PageTitle)`
   font-size: 24px;
@@ -25,13 +21,13 @@ const GiveTitle = styled(PageTitle)`
 
 export default class extends React.Component {
   static async getInitialProps() {
-    return getPageData('giving')
-      .then(document => ({ document }));
+    const document = await getPageData('giving');
+    return { document };
   }
 
   render() {
     return (
-      <div>
+      <>
         <Head>
           <title>Giving | Dreamer's Church, Austin, TX</title>
         </Head>
@@ -45,11 +41,10 @@ export default class extends React.Component {
             </Button>
           </Flex>
         </VideoBanner>
-
-        <Container className="prismic-content">
-          {RichText.render(this.props.pageProps.document.data.content)}
-        </Container>
-      </div>
+        <ContentContainer>
+          <PrismicContent content={this.props.pageProps.document.data.content} />
+        </ContentContainer>
+      </>
     )
   }
 }

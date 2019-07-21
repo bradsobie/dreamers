@@ -6,13 +6,8 @@ import { RichText } from 'prismic-reactjs';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
+import ContentContainer from '../components/ContentContainer';
 import { getPageData, linkResolver } from '../services/prismic';
-
-const Container = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 16px;
-`;
 
 const GoogleMap = styled.iframe`
   border: 0;
@@ -31,13 +26,13 @@ const Section = styled.section`
 
 export default class extends React.Component {
   static async getInitialProps() {
-    return getPageData('visit')
-      .then(document => ({ document }));
+    const document = await getPageData('visit');
+    return { document };
   }
 
   render() {
     return (
-      <div>
+      <>
         <Head>
           <title>Visit Us | Dreamer's Church, Austin, TX</title>
         </Head>
@@ -49,7 +44,7 @@ export default class extends React.Component {
           </Flex>
         </VideoBanner>
 
-        <Container>
+        <ContentContainer>
           <Section>
             {RichText.render(this.props.pageProps.document.data.time)}
             <GoogleMap
@@ -60,8 +55,8 @@ export default class extends React.Component {
           <Section>
             {RichText.render(this.props.pageProps.document.data.what_to_expect, linkResolver)}
           </Section>
-        </Container>
-      </div>
+        </ContentContainer>
+      </>
     )
   }
 }

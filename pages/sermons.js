@@ -26,12 +26,8 @@ export default class extends React.Component {
   }
 
   static async getInitialProps() {
-    return getVideos()
-    .then((videos) => {
-      return {
-        videos
-      };
-    });
+    const videos = await getVideos();
+    return { videos };
   }
 
   componentDidMount() {
@@ -54,7 +50,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Head>
           <title>Sermons | Dreamer's Church, Austin, TX</title>
         </Head>
@@ -80,7 +76,7 @@ export default class extends React.Component {
               <Button theme="dark" onClick={this.onLoadMoreClicked}>Load more</Button>}
           </div>
         </Container>
-      </div>
+      </>
     )
   }
 }
