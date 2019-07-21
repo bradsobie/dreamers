@@ -87,7 +87,7 @@ export default class extends React.Component {
                 <SermonTitle>{latestVideo && latestVideo.snippet.title}</SermonTitle>
                 <Link
                   as={`/sermon/${latestVideo.snippet.resourceId.videoId}`}
-                  href={`/sermon?id=${latestVideo.snippet.resourceId.videoId}&title=${latestVideo.snippet.title}`}>
+                  href={`/sermon/[id]?title=${latestVideo.snippet.title}`}>
                   <WatchNowButton>{RichText.asText(document.data.banner_cta_text)}</WatchNowButton>
                 </Link>
                 <div>
