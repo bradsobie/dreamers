@@ -1,7 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@now/next" }
+    { "src": "package.json", "use": "@now/next" },
+    { "src": "static/sitemap.xml", "use": "@now/static" }
   ],
   "alias": ["dreamers"],
   "routes": [
@@ -9,6 +10,7 @@
     { "src": "/about", "status": 301, "headers": { "Location": "/page/about" } },
     { "src": "/internship", "status": 301, "headers": { "Location": "/page/internship" } },
     { "src": "/nextsteps", "status": 301, "headers": { "Location": "/page/nextsteps" } },
-    { "src": "/smallgroups", "status": 301, "headers": { "Location": "/page/smallgroups" } }
+    { "src": "/smallgroups", "status": 301, "headers": { "Location": "/page/smallgroups" } },
+    { "src": "/sitemap.xml", "dest": "/static/sitemap.xml" }
   ]
 }
