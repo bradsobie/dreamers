@@ -37,7 +37,7 @@ const getThumbnailImage = video => video.snippet.thumbnails.maxres ? video.snipp
 const SermonListItem = ({ video }) => (
   <Link
     as={`/sermon/${video.snippet.resourceId.videoId}`}
-    href={`/sermon?id=${video.snippet.resourceId.videoId}&title=${video.snippet.title}`}>
+    href={`/sermon/[id]?title=${video.snippet.title}`}>
     <Container>
       <img style={{'display': 'block'}} width="100%" src={getThumbnailImage(video)} />
       <Title>{video.snippet.title}</Title>
