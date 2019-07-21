@@ -14,9 +14,9 @@ const Anchor = styled(Link)`
 
 export default ({ flexWrap }) => (
   <Flex alignItems="center" justifyContent="center" flexWrap={flexWrap || 'initial'}>
-    {navigationPages.map(({ text, url, id, external }) => (
-      external ? <Anchor href={url} target="_blank" key={id}>{text}</Anchor> :
-      <NextLink href={url} key={id}>
+    {navigationPages.map(({ text, href, fullUrl, id, external }) => (
+      external ? <Anchor href={fullUrl} target="_blank" key={id}>{text}</Anchor> :
+      <NextLink href={href || fullUrl} as={fullUrl} key={id}>
         <Anchor>{text}</Anchor>
       </NextLink>
     ))}
