@@ -4,7 +4,6 @@
     { "src": "package.json", "use": "@now/next" },
     { "src": "static/sitemap.xml", "use": "@now/static" }
   ],
-  "alias": ["dreamers"],
   "routes": [
     { "src": "/events", "status": 301, "headers": { "Location": "/page/events" } },
     { "src": "/about", "status": 301, "headers": { "Location": "/page/about" } },
