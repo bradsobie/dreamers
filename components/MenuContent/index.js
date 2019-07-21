@@ -34,7 +34,7 @@ export default ({ onCloseMenuClicked }) => (
 
     <LinkContainer>
       {PAGES.map(({ text, fullUrl, href }, index) => (
-        <Link href={href || fullUrl} key={index}>
+        <Link href={href || fullUrl} as={fullUrl} key={index}>
           <a>{text}</a>
         </Link>
       ))}
