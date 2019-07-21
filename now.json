@@ -3,10 +3,5 @@
   "builds": [
     { "src": "package.json", "use": "@now/next" }
   ],
-  "alias": ["dreamers"],
-  "routes": [
-    { "src": "/sermon/(?<id>[^/]*)", "dest": "/sermon?id=$id" },
-    { "src": "/conference", "status": 301, "headers": { "Location": "/events" }},
-    { "src": "/page/(?<id>[^/]+)$", "dest": "/product?id=$id" }
-  ]
+  "alias": ["dreamers"]
 }

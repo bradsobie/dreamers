@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 
-import PageTitle from '../components/PageTitle';
-import Button from '../components/Button';
-import VideoBanner from '../components/VideoBanner';
-import { getVideos } from '../services/youtube';
+import PageTitle from '../../components/PageTitle';
+import Button from '../../components/Button';
+import VideoBanner from '../../components/VideoBanner';
+import { getVideos } from '../../services/youtube';
 
 const Container = styled.div`
   max-width: 700px;
