@@ -10,9 +10,24 @@ import PageTitle from '../../components/PageTitle';
 import VideoBanner from '../../components/VideoBanner';
 
 const Container = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 16px;
+
+  h3 {
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  li {
+    margin: 16px 0;
+    padding-left: 8px;
+  }
 `;
 
 export default class extends React.Component {
