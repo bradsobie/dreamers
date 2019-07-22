@@ -23,7 +23,7 @@ const EventContainer = styled(Box).attrs({
 
 const InfoContainer = styled(Flex).attrs({
   flexDirection: 'column',
-  py: 3
+  pb: 3
 })`
   font-size: 14px;
 `;
