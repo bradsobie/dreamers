@@ -5,12 +5,15 @@ import { Flex, Box } from '@rebass/grid';
 import { RichText } from 'prismic-reactjs';
 import Link from 'next/link';
 import Truncate from 'react-truncate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
 import Button from '../components/Button';
 import ContentContainer from '../components/ContentContainer';
-import { getEvents } from '../services/prismic';
+import { getEvents, formatDate } from '../services/prismic';
 
 const EventContainer = styled(Box).attrs({
   p: 4
@@ -18,12 +21,53 @@ const EventContainer = styled(Box).attrs({
   border: 1px solid #ddd;
 `;
 
+const InfoContainer = styled(Flex).attrs({
+  flexDirection: 'column',
+  py: 3
+})`
+  font-size: 14px;
+`;
+
+const EventInfo = ({ date, time, location }) => (
+  <InfoContainer>
+    {date &&
+      <Flex alignItems="center">
+        <FontAwesomeIcon icon={faCalendarAlt} />
+        <Box ml={2}>
+          {formatDate(date)}
+        </Box>
+      </Flex>
+    }
+    {time.length > 0 &&
+      <Flex alignItems="center" my={1}>
+        <FontAwesomeIcon icon={faClock} />
+        <Box ml={2}>
+          {RichText.asText(time)}
+        </Box>
+      </Flex>
+    }
+    {location.length > 0 &&
+      <Flex alignItems="center">
+        <FontAwesomeIcon icon={faMapMarkerAlt} />
+        <Box ml={2}>
+          {RichText.asText(location)}
+        </Box>
+      </Flex>
+    }
+  </InfoContainer>
+);
+
 const EventItem = ({ event }) => (
   <EventContainer m={3} width={[ 1, 'calc(50% - 32px)' ]}>
     <h2 style={{ marginTop: 0 }}>{RichText.asText(event.data.title)}</h2>
     <p>
       <Truncate lines={3}>{RichText.asText(event.data.content)}</Truncate>
     </p>
+    <EventInfo
+      date={event.data.date}
+      time={event.data.time}
+      location={event.data.location}
+    />
     <Link href="/event/[id]" as={`/event/${event.uid}`}>
       <Button theme="dark">Learn more</Button>
     </Link>

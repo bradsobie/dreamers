@@ -6,19 +6,53 @@ import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
 import Error from 'next/error';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons';
 
-import { getEventDataById } from '../../services/prismic';
+import { getEventDataById, formatDate } from '../../services/prismic';
 import PageTitle from '../../components/PageTitle';
 import VideoBanner from '../../components/VideoBanner';
 import PrismicContent from '../../components/PrismicContent';
 import ContentContainer from '../../components/ContentContainer';
 import Button from '../../components/Button';
 
-const EventImage = styled.img`
-  max-width: 100%;
-  margin-bottom 32px;
+const InfoContainer = styled(Flex).attrs({
+  flexWrap: 'wrap',
+  flexDirection: ['column', 'row'],
+  py: [3, 4]
+})`
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
 `;
+
+const EventInfo = ({ date, time, location }) => (
+  <InfoContainer>
+    {date &&
+      <Flex alignItems="center" mr={[0, 4]}>
+        <FontAwesomeIcon icon={faCalendarAlt} />
+        <Box ml={2}>
+          {formatDate(date)}
+        </Box>
+      </Flex>
+    }
+    {time.length > 0 &&
+      <Flex alignItems="center" my={[2, 0]} mr={[0, 4]}>
+        <FontAwesomeIcon icon={faClock} />
+        <Box ml={2}>
+          {RichText.asText(time)}
+        </Box>
+      </Flex>
+    }
+    {location.length > 0 &&
+      <Flex alignItems="center">
+        <FontAwesomeIcon icon={faMapMarkerAlt} />
+        <Box ml={2}>
+          {RichText.asText(location)}
+        </Box>
+      </Flex>
+    }
+  </InfoContainer>
+);
 
 export default class extends React.Component {
   static async getInitialProps({ query }) {
@@ -51,6 +85,13 @@ export default class extends React.Component {
             && this.props.pageProps.document.data.image.url
             && <img src={this.props.pageProps.document.data.image.url} style={{ maxWidth: '100%' }} />
           }
+
+          <EventInfo
+            date={this.props.pageProps.document.data.date}
+            time={this.props.pageProps.document.data.time}
+            location={this.props.pageProps.document.data.location}
+          />
+          
           <PrismicContent content={this.props.pageProps.document.data.content} />
 
           <Link href="/events">

@@ -1,4 +1,5 @@
 import Prismic from 'prismic-javascript';
+import { Date } from 'prismic-reactjs';
 
 const PRISMIC_API = 'https://dreamers.cdn.prismic.io/api/v2';
 
@@ -17,4 +18,13 @@ export const getEvents = async () => {
     { orderings: '[my.event.date desc]' }
   );
   return events.results;
+};
+
+export const formatDate = (date) => {
+  const prismicDate = Date(date);
+  return Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit'
+  }).format(prismicDate);
 };
