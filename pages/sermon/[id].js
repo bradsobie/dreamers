@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Flex } from '@rebass/grid';
+import { Flex, Box } from '@rebass/grid';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import PageTitle from '../../components/PageTitle';
 import Button from '../../components/Button';
@@ -69,11 +71,14 @@ export default class extends React.Component {
             frameBorder="0">
           </iframe>
           <p>{this.props.pageProps.video.snippet.description}</p>
-          <div style={{'textAlign': 'center'}}>
-            <Link href="/sermons">
-              <Button theme="dark" onClick={this.onLoadMoreClicked}>View all sermons</Button>
-            </Link>
-          </div>
+          <Link href="/sermons">
+            <Button theme="dark">
+              <Flex alignItems="center">
+                <FontAwesomeIcon icon={faChevronLeft} size="1x" />
+                <Box ml={3}>View all sermons</Box>
+              </Flex>
+            </Button>
+          </Link>
         </Container>
       </>
     )

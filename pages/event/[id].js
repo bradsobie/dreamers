@@ -1,15 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
-import { Flex } from '@rebass/grid';
+import { Flex, Box } from '@rebass/grid';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';
 import Error from 'next/error';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { getEventDataById } from '../../services/prismic';
 import PageTitle from '../../components/PageTitle';
 import VideoBanner from '../../components/VideoBanner';
 import PrismicContent from '../../components/PrismicContent';
 import ContentContainer from '../../components/ContentContainer';
+import Button from '../../components/Button';
 
 const EventImage = styled.img`
   max-width: 100%;
@@ -48,6 +52,15 @@ export default class extends React.Component {
             && <img src={this.props.pageProps.document.data.image.url} style={{ maxWidth: '100%' }} />
           }
           <PrismicContent content={this.props.pageProps.document.data.content} />
+
+          <Link href="/events">
+            <Button theme="dark">
+              <Flex alignItems="center">
+                <FontAwesomeIcon icon={faChevronLeft} size="1x" />
+                <Box ml={3}>View All events</Box>
+              </Flex>
+            </Button>
+          </Link>
         </ContentContainer>
       </>
     )
