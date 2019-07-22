@@ -118,7 +118,6 @@ class MyApp extends App {
           <meta name="keywords" content={META_KEYWORDS} />
           <link rel="shortcut icon" type="image/png" href={this.props.commonData.data.favicon.url} />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
-          <script async src='https://tag.simpli.fi/sifitag/d79949f0-f58e-0135-cabe-06a9ed4ca31b'></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){

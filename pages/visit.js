@@ -35,6 +35,7 @@ export default class extends React.Component {
       <>
         <Head>
           <title>Visit Us | Dreamer's Church, Austin, TX</title>
+          <script async src='https://tag.simpli.fi/sifitag/d79949f0-f58e-0135-cabe-06a9ed4ca31b'></script>
         </Head>
         <VideoBanner
           video={this.props.commonData.data.banner_video.url}

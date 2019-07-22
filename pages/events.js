@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { Flex, Box } from '@rebass/grid';
 import { RichText } from 'prismic-reactjs';
 import Link from 'next/link';
+import Truncate from 'react-truncate';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
@@ -20,6 +21,9 @@ const EventContainer = styled(Box).attrs({
 const EventItem = ({ event }) => (
   <EventContainer m={3} width={[ 1, 'calc(50% - 32px)' ]}>
     <h2 style={{ marginTop: 0 }}>{RichText.asText(event.data.title)}</h2>
+    <p>
+      <Truncate lines={3}>{RichText.asText(event.data.content)}</Truncate>
+    </p>
     <Link href="/event/[id]" as={`/event/${event.uid}`}>
       <Button theme="dark">Learn more</Button>
     </Link>
