@@ -60,7 +60,7 @@ const EventInfo = ({ date, time, location }) => (
 const EventItem = ({ event }) => (
   <EventContainer m={3} width={[ 1, 'calc(50% - 32px)' ]}>
     <h2 style={{ marginTop: 0 }}>{RichText.asText(event.data.title)}</h2>
-    <p>
+    <p style={{ maxHeight: '100px', overflow: 'hidden' }}>
       <Truncate lines={3}>{RichText.asText(event.data.content)}</Truncate>
     </p>
     <EventInfo
