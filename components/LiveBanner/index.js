@@ -24,14 +24,20 @@ const Banner = styled(Flex)`
   }
 `;
 
-const renderer = ({ days, hours, minutes, completed }) => {
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) return (
     <Flex alignItems="center">
       <span>We're live!</span>
       <WatchNowButton href={WATCH_NOW_LINK} target="_blank">Watch now</WatchNowButton>
     </Flex>
   );
-  return `Next service is Sunday at ${SERVICE_TIME}. ${days}d ${hours}h ${minutes}m`;
+
+  return (
+    <Flex alignItems="center">
+      <span>{`Next service is ${days === 0 ? 'today' : 'Sunday'} at ${SERVICE_TIME}. ${days > 0 ? `${days}d` : ''} ${hours > 0 ? `${hours}h` : ''} ${minutes}m ${days === 0 ? `${seconds}s` : ''}`}</span>
+      {minutes <= 5 && <WatchNowButton href={WATCH_NOW_LINK} target="_blank">Watch now</WatchNowButton>}
+    </Flex>
+  )
 };
 
 export default ({ serviceDate }) => (
