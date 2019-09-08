@@ -1,5 +1,5 @@
 import Prismic from 'prismic-javascript';
-import { Date } from 'prismic-reactjs';
+import moment from 'moment';
 
 const PRISMIC_API = 'https://dreamers.cdn.prismic.io/api/v2';
 
@@ -21,7 +21,7 @@ export const getEvents = async () => {
 };
 
 export const formatDate = (date) => {
-  const prismicDate = Date(date);
+  const prismicDate = moment(date).utc().toDate();
   return Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'short',
