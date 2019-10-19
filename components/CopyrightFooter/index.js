@@ -1,6 +1,6 @@
 import { RichText } from 'prismic-reactjs';
 import styled from 'styled-components';
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox';
 import Link from '../../components/Link';
 import { CHURCH_ADDRESS, GOOGLE_MAPS_LINK } from '../../constants';
 

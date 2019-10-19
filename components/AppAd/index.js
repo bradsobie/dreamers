@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex, Box } from '@rebass/grid';
+import { Flex, Box } from 'reflexbox';
 import { RichText } from 'prismic-reactjs';
 import Link from 'next/link';
 
@@ -47,7 +47,7 @@ const appPage = PAGES.find(page => page.id === 'app');
 
 export default ({ document, showBadges }) => (
   <Container flexDirection={['column', 'row']} alignItems="center" justifyContent="center">
-    <Box order={[2, 1]}>
+    <Box order={[2, 1]} flexShrink={0}>
       <AppImage src={document.data.app_image.url} />
     </Box>
     <Box order={[1, 2]}>

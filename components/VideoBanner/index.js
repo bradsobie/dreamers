@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Media from 'react-media';
 import Logo from '../Logo';
 import Navigation from '../Navigation';
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox';
 
 const Video = styled.video`
   object-position: top center;

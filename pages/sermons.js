@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import { Flex, Box } from '@rebass/grid';
+import { Flex, Box } from 'reflexbox';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';

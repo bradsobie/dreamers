@@ -1,4 +1,4 @@
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Link from '../../components/Link';

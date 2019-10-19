@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Flex, Box } from '@rebass/grid';
+import { Flex, Box } from 'reflexbox';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RichText } from 'prismic-reactjs';

@@ -1,4 +1,4 @@
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox';
 import styled from  'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

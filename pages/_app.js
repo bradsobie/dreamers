@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 import Router from 'next/router'
 import styled from 'styled-components';
@@ -103,70 +103,68 @@ class MyApp extends App {
   render () {
     const { Component } = this.props;
 
-    return (
-      <Container>
-        <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta property="og:title" content={CHURCH_NAME} />
-          <meta property="og:type" content="article" />
-          <meta property="og:url" content={SITE_URL} />
-          <meta property="og:site_name" content={CHURCH_NAME} />
-          <meta property="og:description" content={META_DESCRIPTION} />
-          <meta property="og:image" content={this.props.commonData.data.open_graph_image.url} />
-          <meta property="og:image:secure_url" content={this.props.commonData.data.open_graph_image.url} />
-          <meta name="description" content={META_DESCRIPTION} />
-          <meta name="keywords" content={META_KEYWORDS} />
-          <link rel="shortcut icon" type="image/png" href={this.props.commonData.data.favicon.url} />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
-          <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/5c4c54b651410568a1086918/default';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}} />
-          <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
-            window.prismic = {
-              endpoint: 'https://dreamers.cdn.prismic.io/api/v2'
-            };
-          `}} />
-          <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js"></script>
-        </Head>
-        <GlobalStyles />
+    return <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content={CHURCH_NAME} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:site_name" content={CHURCH_NAME} />
+        <meta property="og:description" content={META_DESCRIPTION} />
+        <meta property="og:image" content={this.props.commonData.data.open_graph_image.url} />
+        <meta property="og:image:secure_url" content={this.props.commonData.data.open_graph_image.url} />
+        <meta name="description" content={META_DESCRIPTION} />
+        <meta name="keywords" content={META_KEYWORDS} />
+        <link rel="shortcut icon" type="image/png" href={this.props.commonData.data.favicon.url} />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"></link>
+        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/5c4c54b651410568a1086918/default';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+        `}} />
+        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+          window.prismic = {
+            endpoint: 'https://dreamers.cdn.prismic.io/api/v2'
+          };
+        `}} />
+        <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js"></script>
+      </Head>
+      <GlobalStyles />
 
-        <Sidebar
-          sidebar={<MenuContent onCloseMenuClicked={this.onCloseMenuClicked} />}
-          open={this.state.isMenuOpen}
-          onSetOpen={this.onSetOpen}
-          contentId="sidebar-scroll-container"
-          pullRight={true}
-          styles={{
-            sidebar: { background: '#fff', zIndex: 3 },
-            overlay: { zIndex: 2 },
-            dragHandle: { zIndex: 2 }
-          }}
-        >
-          <div>
-            <LiveBanner
-              isLive={this.props.commonData.isLive}
-              serviceDate={this.props.commonData.eventStartTime}
-              countdownText={this.props.commonData.data.live_banner_countdown_text}
-              liveText={this.props.commonData.data.live_banner_watch_now_text}/>
-            <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
-            <AppAd document={this.props.commonData} showBadges={this.props.router.asPath === '/page/app'} />
-            <NavContainer>
-              <Navigation flexWrap="wrap" />
-            </NavContainer>
-            <SocialIcons />
-            <CopyrightFooter document={this.props.commonData} />
-          </div>
-        </Sidebar>
-      </Container>
-    );
+      <Sidebar
+        sidebar={<MenuContent onCloseMenuClicked={this.onCloseMenuClicked} />}
+        open={this.state.isMenuOpen}
+        onSetOpen={this.onSetOpen}
+        contentId="sidebar-scroll-container"
+        pullRight={true}
+        styles={{
+          sidebar: { background: '#fff', zIndex: 3 },
+          overlay: { zIndex: 2 },
+          dragHandle: { zIndex: 2 }
+        }}
+      >
+        <div>
+          <LiveBanner
+            isLive={this.props.commonData.isLive}
+            serviceDate={this.props.commonData.eventStartTime}
+            countdownText={this.props.commonData.data.live_banner_countdown_text}
+            liveText={this.props.commonData.data.live_banner_watch_now_text}/>
+          <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
+          <AppAd document={this.props.commonData} showBadges={this.props.router.asPath === '/page/app'} />
+          <NavContainer>
+            <Navigation flexWrap="wrap" />
+          </NavContainer>
+          <SocialIcons />
+          <CopyrightFooter document={this.props.commonData} />
+        </div>
+      </Sidebar>
+    </>;
   }
 };
 

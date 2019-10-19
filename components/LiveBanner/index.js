@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox';
 import Countdown from 'react-countdown-now';
 import { WATCH_NOW_LINK, SERVICE_TIME } from '../../constants';
 
