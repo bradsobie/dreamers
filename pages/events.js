@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs';
 import Link from 'next/link';
 import Truncate from 'react-truncate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons';
 
 import PageTitle from '../components/PageTitle';
