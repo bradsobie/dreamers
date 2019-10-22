@@ -84,11 +84,11 @@ export default ({ commonData, onOpenMenuClicked }) => {
               alt="Listen on Google Play Music"
               icon={faGooglePlay}
             />
-            {/* <PlatformLink
-              url="https://music.apple.com/album/1482384745?app=itunes&fbclid=IwAR0jIPcH2vM-h0tr1ZxDc9dPt_t30B1TsiiZwEm448gAW8wefyvo8O8ZVTE&ls=1"
+            <PlatformLink
+              url="https://open.spotify.com/track/1UaKlqZioQLIZreitzzIoL?si=AKAYHOqYQDem5RtNe6FYPQ"
               alt="Listen on Spotify"
               icon={faSpotify}
-            /> */}
+            />
             <PlatformLink
               url="https://www.youtube.com/c/dreamerschurch"
               alt="Listen on Youtube"
