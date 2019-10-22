@@ -9,7 +9,7 @@ import { getPageData } from '../services/prismic';
 import { getLiveInfo } from '../services/churchOnline';
 import CopyrightFooter from '../components/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
-import LiveBanner from '../components/LiveBanner';
+import { Banner } from '../components/Banner';
 import Navigation from '../components/Navigation';
 import MenuContent from '../components/MenuContent';
 import AppAd from '../components/AppAd';
@@ -18,7 +18,6 @@ import {
   SITE_URL,
   META_DESCRIPTION,
   META_KEYWORDS,
-  OG_IMAGE,
   GA_ID,
   FB_PIXEL_ID
 } from '../constants';
@@ -150,11 +149,12 @@ class MyApp extends App {
         }}
       >
         <div>
-          <LiveBanner
+          <Banner text="Download our new song" actionText="Miracles Happen" actionLink="/worship" />
+          {/* <LiveBanner
             isLive={this.props.commonData.isLive}
             serviceDate={this.props.commonData.eventStartTime}
             countdownText={this.props.commonData.data.live_banner_countdown_text}
-            liveText={this.props.commonData.data.live_banner_watch_now_text}/>
+            liveText={this.props.commonData.data.live_banner_watch_now_text}/> */}
           <Component {...this.props} onOpenMenuClicked={this.onOpenMenuClicked} />
           <AppAd document={this.props.commonData} showBadges={this.props.router.asPath === '/page/app'} />
           <NavContainer>
