@@ -26,6 +26,13 @@ const Container = styled.div`
   padding: 16px;
 `;
 
+const Header = styled.h3`
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  font-size: 28px;
+`; 
+
+
 const PlatformLink = ({ url, icon, alt }) => (
   <Box mr={5}>
     <a href={url} target="_blank" alt={alt}>
@@ -33,12 +40,6 @@ const PlatformLink = ({ url, icon, alt }) => (
     </a>
   </Box>
 );
-
-const Header = styled.h3`
-  font-weight: 500;
-  margin: 0 0 16px 0;
-  font-size: 28px;
-`; 
 
 const MOBILE_PLAYER_HEIGHT = '250';
 const DESKTOP_PLAYER_HEIGHT = '550';
@@ -83,11 +84,11 @@ export default ({ commonData, onOpenMenuClicked }) => {
               alt="Listen on Google Play Music"
               icon={faGooglePlay}
             />
-            <PlatformLink
+            {/* <PlatformLink
               url="https://music.apple.com/album/1482384745?app=itunes&fbclid=IwAR0jIPcH2vM-h0tr1ZxDc9dPt_t30B1TsiiZwEm448gAW8wefyvo8O8ZVTE&ls=1"
               alt="Listen on Spotify"
               icon={faSpotify}
-            />
+            /> */}
             <PlatformLink
               url="https://www.youtube.com/c/dreamerschurch"
               alt="Listen on Youtube"
