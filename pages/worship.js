@@ -61,15 +61,30 @@ export default ({ commonData, onOpenMenuClicked }) => {
         </Flex>
       </VideoBanner>
       <Container>
-        <iframe
-          type="text/html"
-          width="100%"
-          height={playerHeight}
-          src="https://www.youtube.com/embed/3_Bs-cYN_nY"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen>
-        </iframe>
+        <Flex flexDirection={['column', 'row']}>
+          <Box mr={[0, 3]} mb={[3, 0]} width={['100%', '50%']}>
+            <iframe
+              type="text/html"
+              width="100%"
+              height="250px"
+              src="https://www.youtube.com/embed/3_Bs-cYN_nY"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen>
+            </iframe>
+          </Box>
+          <Box width={['100%', '50%']}>
+            <iframe
+              type="text/html"
+              width="100%"
+              height="250px"
+              src="https://www.youtube.com/embed/89H6OpebwRs"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen>
+            </iframe>
+          </Box>
+        </Flex>
 
         <Section>
           <Header>Listen on all digital platforms</Header>
@@ -142,7 +157,7 @@ export default ({ commonData, onOpenMenuClicked }) => {
               <iframe
                 type="text/html"
                 width="100%"
-                height="230px"
+                height="250px"
                 src="https://www.youtube.com/embed/2kt6oouym38"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -153,7 +168,7 @@ export default ({ commonData, onOpenMenuClicked }) => {
               <iframe
                 type="text/html"
                 width="100%"
-                height="230px"
+                height="250px"
                 src="https://www.youtube.com/embed/272OcccA2dU"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
