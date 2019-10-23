@@ -10,10 +10,10 @@ import {
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
+import appleMusicIcon from '../components/Apple_Music_Icon_blk.svg';
 
 import PageTitle from '../components/PageTitle';
 import VideoBanner from '../components/VideoBanner';
-import useMedia from 'use-media';
 import Button from '../components/Button';
 
 const Section = styled.div`
@@ -33,21 +33,15 @@ const Header = styled.h3`
 `; 
 
 
-const PlatformLink = ({ url, icon, alt }) => (
+const PlatformLink = ({ url, children, alt, title }) => (
   <Box mr={5}>
-    <a href={url} target="_blank" alt={alt}>
-      <FontAwesomeIcon size="3x" icon={icon} />
+    <a href={url} target="_blank" alt={alt} title={title}>
+      {children}
     </a>
   </Box>
 );
 
-const MOBILE_PLAYER_HEIGHT = '250';
-const DESKTOP_PLAYER_HEIGHT = '550';
-
 export default ({ commonData, onOpenMenuClicked }) => {
-  const isWide = useMedia({ minWidth: 800 });
-  const playerHeight = isWide ? DESKTOP_PLAYER_HEIGHT : MOBILE_PLAYER_HEIGHT;
-
   return (
     <>
       <Head>
@@ -92,23 +86,33 @@ export default ({ commonData, onOpenMenuClicked }) => {
             <PlatformLink
               url="https://music.apple.com/album/1482384745?app=itunes&fbclid=IwAR0jIPcH2vM-h0tr1ZxDc9dPt_t30B1TsiiZwEm448gAW8wefyvo8O8ZVTE&ls=1"
               alt="Listen on Apple Music"
-              icon={faApple}
-            />
+              title="Listen on Apple Music">
+              <img height="48px" src={appleMusicIcon} />
+            </PlatformLink>
+            <PlatformLink
+              url="http://itunes.apple.com/album/id1482384745?ls=1&app=itunes"
+              alt="Listen on iTunes"
+              title="Listen on iTunes">
+              <FontAwesomeIcon size="3x" icon={faApple} />
+            </PlatformLink>
             <PlatformLink
               url="https://play.google.com/store/music/album/Dreamer_s_Church_Miracles_Happen?id=Bk7rf4dr2mpeouruw6ym2dy3yle"
               alt="Listen on Google Play Music"
-              icon={faGooglePlay}
-            />
+              title="Listen on Google Play Music">
+              <FontAwesomeIcon size="3x" icon={faGooglePlay} />
+            </PlatformLink>
             <PlatformLink
               url="https://open.spotify.com/track/1UaKlqZioQLIZreitzzIoL?si=AKAYHOqYQDem5RtNe6FYPQ"
               alt="Listen on Spotify"
-              icon={faSpotify}
-            />
+              title="Listen on Spotify">
+              <FontAwesomeIcon size="3x" icon={faSpotify} />
+            </PlatformLink>
             <PlatformLink
               url="https://www.youtube.com/c/dreamerschurch"
               alt="Listen on Youtube"
-              icon={faYoutube}
-            />
+              title="Listen on Youtube">
+              <FontAwesomeIcon size="3x" icon={faYoutube} />
+            </PlatformLink>
           </Flex>
         </Section>
         
