@@ -1,6 +1,6 @@
 # Dreamer's Church Website
 
-[https://dreamers.church](https://dreamers.church)
+[https://dreamers.now.sh](https://dreamers.now.sh)
 
 ## Links
 
