@@ -6,7 +6,6 @@ import Sidebar from 'react-sidebar';
 import withAnalytics from 'next-analytics';
 import GlobalStyles from '../globalStyles';
 import { getPageData } from '../services/prismic';
-import { getLiveInfo } from '../services/churchOnline';
 import CopyrightFooter from '../components/CopyrightFooter';
 import SocialIcons from '../components/SocialIcons';
 import { Banner } from '../components/Banner';
@@ -51,11 +50,9 @@ class MyApp extends App {
 
     const commonData = await Promise.all([
       getPageData('common'),
-      getLiveInfo()
-    ]).then(([commonCmsData, churchOnlineInfo]) => {
+    ]).then(([commonCmsData]) => {
       return {
         ...commonCmsData,
-        ...churchOnlineInfo
       };
     });
 
