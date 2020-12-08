@@ -1,6 +1,6 @@
 # Dreamer's Church Website
 
-[https://dreamers.now.sh](https://dreamers.now.sh)
+[https://dreamers.vercel.app](https://dreamers.vercel.app)
 
 ## Links
 
