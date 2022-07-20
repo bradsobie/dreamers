@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-    "terser": "^3.14.1"
+    "terser": "^4.8.1"
   },
   "resolutions": {
     "terser": "3.14.1"
